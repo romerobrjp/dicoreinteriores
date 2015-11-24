@@ -15,7 +15,7 @@
     <%= f.input :title %>
     <%= f.input :introduction %>
     <%= f.input :draft %>
-    <%= f.input :body %>
+    <%= f.input :body, input_html: { 'data-provide': 'markdown' } %>
   </div>
   <div class="box-footer">
     <%= f.submit class: 'btn btn-primary' %>
