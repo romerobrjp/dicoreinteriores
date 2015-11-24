@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :posts
+    resources :assets
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

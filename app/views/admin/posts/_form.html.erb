@@ -1,15 +1,6 @@
   <!-- form start -->
 <%= simple_form_for([:admin, @post]) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this admin_post from being saved:</h2>
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.error_notification %>
 
   <div class="box-body">
     <%= f.input :title %>

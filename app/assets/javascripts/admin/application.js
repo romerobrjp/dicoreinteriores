@@ -16,4 +16,7 @@
 //= require markdown
 //= require bootstrap-markdown
 //= require admin/app
+//= require clipboard
 //= require_tree .
+
+new Clipboard('.clipboard-btn');

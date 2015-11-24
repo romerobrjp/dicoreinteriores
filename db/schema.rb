@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124002658) do
+ActiveRecord::Schema.define(version: 20151124155000) do
+
+  create_table "assets", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",                       null: false

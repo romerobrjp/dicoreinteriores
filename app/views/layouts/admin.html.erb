@@ -149,6 +149,25 @@
                 </li>
               </ul>
             </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-files-o"></i>
+                <span>Files</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li>
+                  <%= link_to admin_assets_path do %>
+                    <i class="fa fa-circle-o"></i> All Files
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_admin_asset_path do %>
+                    <i class="fa fa-circle-o"></i> New File
+                  <% end %>
+                </li>
+              </ul>
+            </li>
           </ul>
         </section>
       </aside>
