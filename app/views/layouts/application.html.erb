@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Dicore</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
 
-<%= yield %>
+<%= render 'shared/head' %>
 
-</body>
+  <body>
+    <!-- Begin section images loading -->
+    <div id="tzloadding">
+      <img class="loadding_img" src="images/loadding.GIF" alt="Image">
+    </div>
+    <!-- End section images loading -->
+    <!-- Begin section everline_boxed -->
+    <div class="everline_boxed">
+      <div class="vc_row wpb_row vc_row-fluid">
+        <div class="nocontainer">
+          <div class="vc_col-sm-12 wpb_column vc_column_container ">
+            <div class="wpb_wrapper">
+              <%= render 'shared/header' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%= yield %>
+
+      <%= render 'shared/footer' %>
+      <!-- End class container-->
+    </div>
+    <!-- End section everline_boxed -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </body>
+
+  </body>
+
 </html>
