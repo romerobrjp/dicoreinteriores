@@ -21,7 +21,5 @@
 @import "bootstrap/bootstrap";
 
 $fa-font-path: "font-awesome" !default;
-@function url($url) {
-    @return asset-url($url);
-}
+
 @import "font-awesome/font-awesome";

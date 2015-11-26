@@ -125,7 +125,7 @@ ins {
 }
 
 hr {
-    background: url(images/dotted-line.png) repeat center top;
+    background: asset-url('site/dotted-line.png') repeat center top;
     background-size: 4px 4px;
     border: 0;
     height: 1px;
@@ -828,20 +828,20 @@ a:focus {
     }
 }
 body .tp-leftarrow.default{
-    background-image: url('images/pre-slider.png');
+    background-image: asset-url('site/pre-slider.png');
 }
 body .tp-leftarrow:hover{
-    background-image: url('images/pre-slider-hover.png');
+    background-image: asset-url('site/pre-slider-hover.png');
 }
 body .tp-leftarrow:hover,
 body .tp-rightarrow:hover {
     background-position: inherit;
 }
 body .tp-rightarrow.default{
-    background-image: url('images/next-slider.png');
+    background-image: asset-url('site/next-slider.png');
 }
 body .tp-rightarrow:hover{
-    background-image: url('images/next-slider-hover.png');
+    background-image: asset-url('site/next-slider-hover.png');
 }
 /*-----visual composer*/
 .vc_col-xs-1,
@@ -4579,7 +4579,7 @@ table.variations{
     display: none;
 }
 .tzquick-wrap-bk{
-    background: url("images/loadding_view.GIF") no-repeat center center rgba(0, 0, 0, 0.6);
+    background: asset-url("site/loading_view.gif") no-repeat center center rgba(0, 0, 0, 0.6);
 }
 .tzquick-wrap-eff{
     display: block;
@@ -8210,7 +8210,7 @@ blockquote:before{
 .tcomingsoom{
     height: 700px;
     width: 100%;
-    background-image: url('images/qri.jpg');
+    background-image: asset-url('site/qri.jpg');
     background-repeat: no-repeat;
     background-color: transparent;
     background-size: cover;
@@ -9497,7 +9497,7 @@ div.wpcf7-response-output {
     width: 100%;
     text-align: center;
     padding: 15% 0 0;
-    background-image: url('images/404.jpg');
+    background-image: asset-url('site/404.jpg');
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;

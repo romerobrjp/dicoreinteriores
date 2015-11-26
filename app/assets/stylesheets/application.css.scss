@@ -10,22 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
 
- *= require site/contact-form-7
- *= require site/revslider
  *= require_self
- *= require site/owl.carousel
- *= require site/owl.theme
- *= require site/flexslider
- *= require site/style
- *= require site/style-inline
- *= require site/js_composer_front
+ *= require site/contact-form-7
   */
+
+ @import "site/revslider";
 
  @import "bootstrap/bootstrap-sprockets";
  @import "bootstrap/bootstrap";
 
  $fa-font-path: "font-awesome" !default;
- @function url($url) {
-     @return asset-url($url);
- }
  @import "font-awesome/font-awesome";
+
+ @import "site/style";

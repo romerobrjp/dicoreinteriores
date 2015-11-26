@@ -3,11 +3,35 @@
   <%= f.error_notification %>
 
   <div class="box-body">
-    <%= f.input :title %>
-    <%= f.input :introduction %>
-    <%= f.input :draft %>
-    <%= f.input :body, input_html: { 'data-provide': 'markdown' } %>
+
+    <div class="row">
+      <div class="col-md-10">
+        <%= f.input :title %>
+      </div>
+      <div class="col-md-2">
+        <%= f.input :draft %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :introduction %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :main_image %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :body, input_html: { 'data-provide': 'markdown' } %>
+      </div>
+    </div>
   </div>
+
   <div class="box-footer">
     <%= f.submit class: 'btn btn-primary' %>
     <%= link_to 'Cancel', admin_posts_path, class: 'btn btn-danger' %>

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get '/blog' => 'blog#index'
+  get '/blog/:id' => 'blog#show', as: 'post'
+
   root 'home#index'
 
   devise_for :users

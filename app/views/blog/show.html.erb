@@ -1,0 +1,107 @@
+<div class="tzdefault_title">
+  <div class="container">
+    <h1>Blog</h1>
+  </div>
+</div>
+<div class="single_post">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <% unless @post.main_image.nil? %>
+          <div class="tzblog-img">
+            <%= image_tag @post.main_image.url %>
+          </div>
+        <% end %>
+        <h2 class="single-title"><%= @post.title %></h2>
+        <span class="single-meta">
+          <%= @post.created_at %>
+          <span>
+            /
+            <a href="#" rel="category tag">Blog</a>
+          </span>
+        </span>
+        <div class="single-content">
+          <%= markdown(@post.body) %>
+        </div>
+        <div class="single-tags">
+          <div class="meta-tags pull-left">
+            Tags:
+            <% @post.tags.each do |tag| %>
+              <a href="#" rel="tag"><%= tag.name %> </a>
+            <% end %>
+          </div>
+          <div class="single-share pull-right">
+            <span>Share it:</span>
+            <!-- Facebook Button -->
+            <a class="tz_social" href="javascript: void(0)" id="fb-share" onclick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=IMAGE POST&amp;p[url]=#','sharer','toolbar=0,status=0,width=580,height=325');">
+              <i class="fa fa-facebook"></i>
+            </a>
+
+            <!-- Twitter Button -->
+            <a class="tz_social" href="javascript: void(0)" id="tw-share" onclick="window.open('http://twitter.com/share?text=IMAGE POST&amp;url=#','sharer','toolbar=0,status=0,width=580,height=325');">
+              <i class="fa fa-twitter"></i>
+            </a>
+
+            <!-- Google +1 Button -->
+            <a class="tz_social" href="javascript: void(0)" id="g-share" onclick="window.open('https://plus.google.com/share?url=#','sharer','toolbar=0,status=0,width=580,height=325');">
+              <i class="fa fa-google-plus"></i>
+            </a>
+
+            <!-- Pinterest Button -->
+            <a class="tz_social" href="javascript: void(0)" id="p-share" onclick="window.open('http://pinterest.com/pin/create/button/?url=#;description=IMAGE POST','sharer','toolbar=0,status=0,width=580,height=325');">
+              <i class="fa fa-pinterest"></i>
+            </a>
+          </div>
+        </div>
+        <div class="single-author">
+          <img alt='Images' class='avatar avatar-100 photo' src="http://placehold.it/100x100"/>
+          <span class="author-ds">
+            <a class="single-author-name" href="#">Mary Doe</a>
+            <a class="single-author-url" href=""></a>
+          </span>
+        </div>
+        <div class="tzcomments-area">
+          <div class="comments-area" id="comments">
+            <div class="row">
+              <div class="comment-respond" id="respond">
+                <h3 class="comment-reply-title" id="reply-title">Leave a Reply</h3>
+                <form action="#" class="comment-form" id="commentform" method="post">
+                  <p class="comment-notes">
+                    <span id="email-notes">Your email address will not be published.</span>
+                    Required fields are marked
+                    <span class="required">*</span>
+                  </p>
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <label>Name *</label>
+                    <input aria-required='true' id="author" name="author" size="30" type="text" value=""/>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <label>Email *</label>
+                    <input aria-required='true' id="email" name="email" size="30" type="text" value=""/>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <label>Website *</label>
+                    <input aria-required='true' id="url" name="url" size="30" type="text" value=""/>
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tzcomment-textarea">
+                    <label>Comment</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="5"></textarea>
+                  </div>
+                  <div class="clearfix"></div>
+                  <p class="form-submit">
+                    <input class="submit" id="submit" name="submit" type="submit" value="Post Comment"/>
+                    <input id='comment_post_ID' name='comment_post_ID' type='hidden' value='199'/>
+                    <input id='comment_parent' name='comment_parent' type='hidden' value='0'/>
+                  </p>
+                </form>
+              </div>
+              <!-- #respond -->
+            </div>
+          </div>
+          <!-- #comments .comments-area -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

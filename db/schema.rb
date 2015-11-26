@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124155000) do
+ActiveRecord::Schema.define(version: 20151125162648) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "description"
@@ -24,12 +24,16 @@ ActiveRecord::Schema.define(version: 20151124155000) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",                       null: false
+    t.string   "title",                                  null: false
     t.string   "introduction"
-    t.text     "body",                        null: false
-    t.boolean  "draft",        default: true
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.text     "body",                                   null: false
+    t.boolean  "draft",                   default: true
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "main_image_file_name"
+    t.string   "main_image_content_type"
+    t.integer  "main_image_file_size"
+    t.datetime "main_image_updated_at"
   end
 
   create_table "taggings", force: :cascade do |t|

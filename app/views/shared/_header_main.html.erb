@@ -1,0 +1,17 @@
+<!-- Begin Header -->
+<header class="tz-header tz-header1">
+  <div class="wrapbox">
+    <div class="container">
+      <button class="btn-navbar tz_icon_menu pull-right" data-target=".nav-collapse" type="button">
+        <i class="fa fa-bars"></i>
+      </button>
+      <h3 class="tzlogo pull-left">
+        <a class="pull-left tz_logo" href="/" title="Dicore Online">
+          <%= image_tag 'site/logo.png', class: 'logo_lager' %>
+        </a>
+      </h3>
+      <%= render partial: 'shared/header_menu', locals: {nav_class: 'tznav-menu'} %>
+    </div>
+  </div>
+</header>
+<!-- End Header -->
