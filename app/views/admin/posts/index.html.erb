@@ -19,10 +19,10 @@
 
       <tbody>
         <% @posts.each do |post| %>
-        <tr class="<%= !post.draft ? 'bg-warning' : 'bg-success' %>">
+        <tr class="<%= post.draft ? 'bg-warning' : 'bg-success' %>">
           <td><%= post.title %></td>
           <td>
-            <% if post.draft %>
+            <% if !post.draft %>
               Publicado
             <% else %>
               Rascunho
