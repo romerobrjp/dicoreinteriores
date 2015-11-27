@@ -25,6 +25,7 @@ class Admin::PostsController < Admin::AdminController
   # POST /admin/posts.json
   def create
     @post = Post.new(admin_post_params)
+    @post.author = current_admin
 
     respond_to do |format|
       if @post.save
@@ -40,6 +41,7 @@ class Admin::PostsController < Admin::AdminController
   # PATCH/PUT /admin/posts/1
   # PATCH/PUT /admin/posts/1.json
   def update
+    @post.author = current_admin
     respond_to do |format|
       if @post.update(admin_post_params)
         format.html { redirect_to [:admin, @post], notice: 'Post was successfully updated.' }
