@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125162648) do
+ActiveRecord::Schema.define(version: 20151127000032) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "description"
@@ -34,7 +34,10 @@ ActiveRecord::Schema.define(version: 20151125162648) do
     t.string   "main_image_content_type"
     t.integer  "main_image_file_size"
     t.datetime "main_image_updated_at"
+    t.integer  "author_id"
   end
+
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -88,6 +91,10 @@ ActiveRecord::Schema.define(version: 20151125162648) do
     t.integer  "failed_attempts",        default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email", "type"], name: "index_users_on_email_and_type", unique: true

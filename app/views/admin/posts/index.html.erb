@@ -7,31 +7,36 @@
     <%= link_to 'New Post', new_admin_post_path, class: 'btn btn-primary pull-right' %>
   </div>
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Draft?</th>
-        <th>Published at</th>
-      </tr>
-    </thead>
+  <div class="box-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Draft?</th>
+          <th>Published at</th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <% @posts.each do |post| %>
+      <tbody>
+        <% @posts.each do |post| %>
         <tr>
           <td><%= post.title %></td>
           <td><%= post.draft %></td>
           <td><%= post.created_at %></td>
           <td>
             <div class="btn-group btn-group-xs" role="group">
-              <%= link_to admin_post_path(post), class: 'btn btn-primary' do %><i class="fa fa-eye"></i><% end %>
-              <%= link_to edit_admin_post_path(post), class: 'btn btn-warning' do %><i class="fa fa-pencil"></i><% end %>
-              <%= link_to admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %><i class="fa fa-trash"></i><% end %>
+              <%= link_to admin_post_path(post), class: 'btn btn-primary' do %>
+              <i class="fa fa-eye"></i><% end %>
+              <%= link_to edit_admin_post_path(post), class: 'btn btn-warning' do %>
+              <i class="fa fa-pencil"></i><% end %>
+              <%= link_to admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+              <i class="fa fa-trash"></i><% end %>
             </div>
           </td>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <% end %>
+      </tbody>
+    </table>
 
+  </div>
 </div>

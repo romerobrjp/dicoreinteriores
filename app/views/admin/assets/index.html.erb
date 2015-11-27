@@ -1,46 +1,50 @@
-<p id="notice"><%= notice %></p>
-
-<% content_for :page_header, 'Blog' %>
+<% content_for :page_header, 'Arquivos' %>
 <div class="box box-primary">
   <div class="box-header with-border">
     <h3 class="box-title">Assets</h3>
     <%= link_to 'New Asset', new_admin_asset_path, class: 'btn btn-primary pull-right' %>
   </div>
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>File</th>
-        <th>Created at</th>
-      </tr>
-    </thead>
+  <div class="box-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>File</th>
+          <th>Created at</th>
+          <th></th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <% @assets.each do |asset| %>
+      <tbody>
+        <% @assets.each do |asset| %>
         <tr>
           <td><%= asset.description %></td>
           <td>
-            <div class="input-group" style="max-width: 200px">
-              <input id="asset_url<%= asset.id %>" value="<%= asset.file.url %>" class="form-control input-sm" />
+            <div class="input-group" style="max-width: 300px">
+              <input class="form-control input-sm" id="asset_url<%= asset.id %>" value="<%= asset.file.url %>"/>
               <div class="input-group-btn">
-                <button class="btn btn-default btn-sm clipboard-btn" type="button" data-clipboard-target="#asset_url<%= asset.id %>">
-                  <i class="fa fa-clipboard" alt="Copy to clipboard"></i>
+                <button class="btn btn-default btn-sm clipboard-btn" data-clipboard-target="#asset_url<%= asset.id %>" type="button">
+                  <i alt="Copy to clipboard" class="fa fa-clipboard"></i>
                 </button>
+                <%= link_to asset.file.url, class: 'btn btn-default btn-sm' do %>
+                <i alt="Copy to clipboard" class="fa fa-download"></i>
+                <% end %>
               </div>
             </div>
           </td>
           <td><%= asset.created_at %></td>
           <td>
             <div class="btn-group btn-group-xs" role="group">
-              <%= link_to admin_asset_path(asset), class: 'btn btn-primary' do %><i class="fa fa-eye"></i><% end %>
-              <%= link_to edit_admin_asset_path(asset), class: 'btn btn-warning' do %><i class="fa fa-pencil"></i><% end %>
-              <%= link_to admin_asset_path(asset), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %><i class="fa fa-trash"></i><% end %>
+              <%= link_to edit_admin_asset_path(asset), class: 'btn btn-warning' do %>
+              <i class="fa fa-pencil"></i><% end %>
+              <%= link_to admin_asset_path(asset), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+              <i class="fa fa-trash"></i><% end %>
             </div>
           </td>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

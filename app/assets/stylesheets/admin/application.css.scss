@@ -23,3 +23,10 @@
 $fa-font-path: "font-awesome" !default;
 
 @import "font-awesome/font-awesome";
+
+
+.admin-post-show-body {
+  img {
+    @include img-responsive;
+  }
+}
