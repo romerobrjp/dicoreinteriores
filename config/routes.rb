@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get '/blog' => 'blog#index'
   get '/blog/:id' => 'blog#show', as: 'post'
+  get '/blog/tag/:tag' => 'blog#tag', as: 'tag'
 
   root 'home#index'
 

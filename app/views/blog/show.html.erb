@@ -14,11 +14,7 @@
         <% end %>
         <h2 class="single-title"><%= @post.introduction %></h2>
         <span class="single-meta">
-          <%= @post.created_at %>
-          <span>
-            /
-            <a href="#" rel="category tag">Blog</a>
-          </span>
+          <%= l @post.created_at %>
         </span>
         <div class="single-content">
           <%= markdown(@post.body) %>
@@ -27,7 +23,7 @@
           <div class="meta-tags pull-left">
             Tags:
             <% @post.tags.each do |tag| %>
-              <a href="#" rel="tag"><%= tag.name %> </a>
+              <%= link_to tag.name, tag_path(tag.name) %>
             <% end %>
           </div>
           <div class="single-share pull-right">

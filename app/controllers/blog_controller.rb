@@ -6,4 +6,10 @@ class BlogController < ApplicationController
   def show
     @post = Post.find_by_id_and_draft!(params[:id], false)
   end
+
+  def tag
+    @posts = Post.tagged_with(params[:tag]).published_ordered
+    render 'index'
+  end
+
 end

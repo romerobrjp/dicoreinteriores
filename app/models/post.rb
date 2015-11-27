@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :body
+  validates_presence_of :author_id
+  validates_associated :author
 
   def self.published_ordered
     Post.where(draft: false).order('created_at DESC')
