@@ -12,6 +12,8 @@ class Post < ActiveRecord::Base
   validates_presence_of :author_id
   validates_associated :author
 
+  paginates_per 10
+
   def self.published_ordered
     Post.where(draft: false).order('created_at DESC')
   end

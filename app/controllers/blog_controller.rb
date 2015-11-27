@@ -1,6 +1,6 @@
 class BlogController < ApplicationController
   def index
-    @posts = Post.published_ordered
+    @posts = Post.published_ordered.page(params.fetch(:page, 1))
   end
 
   def show
@@ -8,7 +8,7 @@ class BlogController < ApplicationController
   end
 
   def tag
-    @posts = Post.tagged_with(params[:tag]).published_ordered
+    @posts = Post.tagged_with(params[:tag]).published_ordered.page(params.fetch(:page, 1))
     render 'index'
   end
 
