@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<% content_for :page_header, 'Blog' %>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Postagens</h3>
+    <%= link_to 'New Post', new_admin_post_path, class: 'btn btn-primary pull-right' %>
+  </div>
+
+  <div class="box-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Rascunho</th>
+          <th class="hidden-sm hidden-xs">Published at</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @posts.each do |post| %>
+        <tr class="<%= post.draft ? 'bg-warning' : 'bg-success' %>">
+          <td><%= post.title %></td>
+          <td>
+            <% if !post.draft %>
+              Publicado
+            <% else %>
+              Rascunho
+            <% end %>
+          </td>
+          <td class="hidden-sm hidden-xs"><%= l post.created_at %></td>
+          <td>
+            <div class="btn-group btn-group-xs" role="group">
+              <%= link_to admin_post_path(post), class: 'btn btn-primary' do %>
+              <i class="fa fa-eye"></i><% end %>
+              <%= link_to edit_admin_post_path(post), class: 'btn btn-warning' do %>
+              <i class="fa fa-pencil"></i><% end %>
+              <%= link_to admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+              <i class="fa fa-trash"></i><% end %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
