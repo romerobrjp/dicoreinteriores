@@ -11,7 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117015845) do
+ActiveRecord::Schema.define(version: 20151127000032) do
+
+  create_table "assets", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",                                  null: false
+    t.string   "introduction"
+    t.text     "body",                                   null: false
+    t.boolean  "draft",                   default: true
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "main_image_file_name"
+    t.string   "main_image_content_type"
+    t.integer  "main_image_file_size"
+    t.datetime "main_image_updated_at"
+    t.integer  "author_id"
+  end
+
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id"
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -45,6 +91,10 @@ ActiveRecord::Schema.define(version: 20151117015845) do
     t.integer  "failed_attempts",        default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email", "type"], name: "index_users_on_email_and_type", unique: true

@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
 
+  get '/blog' => 'blog#index'
+  get '/blog/:id' => 'blog#show', as: 'post'
+  get '/blog/tag/:tag' => 'blog#tag', as: 'tag'
+
   root 'home#index'
 
   devise_for :users
+
+  namespace :admin do
+    resources :posts
+    resources :assets
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,43 @@
+  <!-- form start -->
+<%= simple_form_for([:admin, @post]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="box-body">
+
+    <div class="row">
+      <div class="col-md-10">
+        <%= f.input :title %>
+      </div>
+      <div class="col-md-2">
+        <%= f.input :draft %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :introduction %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :main_image %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :tag_list, input_html: {value: @post.tag_list.to_s} %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :body, input_html: { 'data-provide': 'markdown' } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-footer">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', admin_posts_path, class: 'btn btn-danger' %>
+  </div>
+
+<% end %>

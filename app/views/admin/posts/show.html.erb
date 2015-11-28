@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<% content_for :page_header, 'Blog' %>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Exibindo Postagem</h3>
+    <div class="btn-group btn-group pull-right" role="group">
+      <%= link_to 'Edit Post', edit_admin_post_path(@post), class: 'btn btn-primary' %>
+      <%= link_to 'Delete Post', admin_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+
+  <div class="box-body">
+    <% if @post.draft %>
+      <div class="callout callout-warning">
+        <h4>Rascunho da postagem</h4>
+        <p>Esse post ainda não foi publicado, e não está visível ao público.</p>
+      </div>
+    <% else %>
+      <div class="callout callout-success">
+        <h4>Post publicado</h4>
+        <p>Esse post foi publicado e está visível ao público.</p>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= image_tag @post.main_image.url(:cropped), class: 'img-responsive' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1><%= @post.title %></h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3><%= @post.introduction %></h3>
+        <h6 class="pull-right">
+          <%= @post.tags.map(&:name).join(', ') %>
+        </h6>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 admin-post-show-body">
+        <%= markdown @post.body %>
+      </div>
+    </div>
+
+  </div>
+</div>

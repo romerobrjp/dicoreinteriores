@@ -21,9 +21,7 @@
 
         <!-- Logo -->
         <a href="index2.html" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>D</b>ON</span>
-          <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>DiCore</b>Online</span>
         </a>
 
@@ -51,8 +49,9 @@
                       <li><!-- start message -->
                         <a href="#">
                           <div class="pull-left">
-                            <!-- User Image -->
+                            <!-- User Image
                             <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            -->
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
@@ -96,16 +95,16 @@
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <i class="fa fa-user fa-1x img-circle" height="160" width="160"></i>
+                  <%= image_tag Admin.first.avatar.url(:thumb), class: 'user-image' %>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs"><%= Admin.first.name %></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <i class="fa fa-user fa-5x img-circle" height="160" width="160"></i>
+                    <%= image_tag Admin.first.avatar.url(:thumb), class: 'img-circle' %>
                     <p>
-                      Alexander Pierce - Web Developer
+                      <%= Admin.first.name %>
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -127,17 +126,47 @@
         </nav>
       </header>
       <aside class="main-sidebar">
-
         <section class="sidebar">
           <ul class="sidebar-menu">
             <li class="header">HEADER</li>
             <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
             <li class="treeview">
-              <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#">
+                <i class="fa fa-pencil-square-o"></i>
+                <span>Blog</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
               <ul class="treeview-menu">
-                <li><a href="#">Link in level 2</a></li>
-                <li><a href="#">Link in level 2</a></li>
+                <li>
+                  <%= link_to admin_posts_path do %>
+                    <i class="fa fa-circle-o"></i> All Posts
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_admin_post_path do %>
+                    <i class="fa fa-circle-o"></i> New Post
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-files-o"></i>
+                <span>Files</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li>
+                  <%= link_to admin_assets_path do %>
+                    <i class="fa fa-circle-o"></i> All Files
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_admin_asset_path do %>
+                    <i class="fa fa-circle-o"></i> New File
+                  <% end %>
+                </li>
               </ul>
             </li>
           </ul>
@@ -147,7 +176,7 @@
       <div class="content-wrapper">
         <section class="content-header">
           <h1>
-            <%= content_for :page_header %>
+            <%= yield :page_header %>
           </h1>
         </section>
 
@@ -221,6 +250,6 @@
       <div class="control-sidebar-bg"></div>
     </div>
 
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'admin/application' %>
   </body>
 </html>

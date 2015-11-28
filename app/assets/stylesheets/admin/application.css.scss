@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require admin/AdminLTE
+ *= require bootstrap-markdown/bootstrap-markdown.min
  *= require admin/skin-purple
  */
 
@@ -20,7 +21,12 @@
 @import "bootstrap/bootstrap";
 
 $fa-font-path: "font-awesome" !default;
-@function url($url) {
-    @return asset-url($url);
-}
+
 @import "font-awesome/font-awesome";
+
+
+.admin-post-show-body {
+  img {
+    @include img-responsive;
+  }
+}
