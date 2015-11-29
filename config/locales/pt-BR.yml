@@ -20,19 +20,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 pt-BR:
+  generic:
+    or: 'Ou'
   activerecord:
     models:      
       user:
         one: 'Usuário'
         other: 'Usuários'
   controllers:
-    application:
+    app:
   views:
-    application:
+    app:
       auth:
         hello_guest: 'Olá, visitante'
         forgot_password: 'Esqueci minha senha'
         sign_in: 'Entrar'
+        sign_in_facebook: 'Entrar usando Facebook'
+        sign_in_google: 'Entrar usando Google+'
+        sign_in_msg: 'Autentique-se para iniciar a sessão'
         sign_out: 'Sair'
         remember_password: 'Lembrar senha'
         sign_up: 'Criar conta'
