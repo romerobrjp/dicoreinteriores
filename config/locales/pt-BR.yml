@@ -21,6 +21,7 @@
 
 pt-BR:
   generic:
+    app_name: 'DIcore Online'
     or: 'Ou'
   activerecord:
     models:      
