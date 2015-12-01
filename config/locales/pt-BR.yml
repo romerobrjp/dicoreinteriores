@@ -30,6 +30,7 @@ pt-BR:
   controllers:
     app:
   views:
+    admin:      
     app:
       auth:
         hello_guest: 'Olá, visitante'
@@ -47,10 +48,14 @@ pt-BR:
       details: 'Detalhes'
       edit: 'Editar'
       fepb: 'FEPB'
-      manage_users: 'Gerenciar usuários'
+      manage_users: 'Gerenciar usuários'      
       new: 'Novo'
       select_one: 'Selecione...'
       show: 'Exibir'
+    menu:
+        admin_panel: 'Painel do Admin'
+        home: 'Início'
+        blog: 'Blog'
     pagination:
       first: "&laquo; Primeira"
       last: "Última &raquo;"
