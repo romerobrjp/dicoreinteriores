@@ -9,11 +9,12 @@
     </li>
 
     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children" id="menu-item-183">
-      <%= link_to t('views.app.auth.sign_in'), new_user_session_path %>
+      <%= link_to t('views.menu.admin_panel'), :admin_posts if current_user.present? and current_user.type == 'Admin' %>
     </li>
 
     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children" id="menu-item-183">
-      <%= link_to t('views.menu.admin_panel'), :admin_posts if current_user.present? and current_user.type == 'Admin' %>
+      <%= link_to t('views.app.auth.sign_in'), new_user_session_path if !current_user.present? %>
+      <%= link_to t('views.app.auth.sign_out'), destroy_user_session_path, method: 'delete' if current_user.present? %>
     </li>
   </ul>
 </nav>
