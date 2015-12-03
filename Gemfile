@@ -38,7 +38,7 @@ gem 'simple_form'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem "paperclip", "~> 4.2"
 gem 'redcarpet'
-gem 'kaminari'
+gem 'kaminari', "~> 0.16.3"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
