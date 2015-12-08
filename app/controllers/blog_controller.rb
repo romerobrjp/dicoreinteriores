@@ -1,4 +1,6 @@
 class BlogController < ApplicationController
+  layout "blog"
+
   def index
     @posts = Post.published_ordered.page(params.fetch(:page, 1))
   end
