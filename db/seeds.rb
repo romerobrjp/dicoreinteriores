@@ -16,3 +16,9 @@ User.create!(
   password: '123123123', 
   type: 'Admin'
 )
+
+1.upto(5) do |n|
+  Category.create(
+    name: "Category #{n}"
+  )
+end
