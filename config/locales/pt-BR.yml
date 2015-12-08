@@ -31,7 +31,7 @@ pt-BR:
   controllers:
     app:
   views:
-    admin:      
+    admin:
     app:
       auth:
         hello_guest: 'Olá, visitante'
@@ -53,10 +53,17 @@ pt-BR:
       new: 'Novo'
       select_one: 'Selecione...'
       show: 'Exibir'
+    blog:
+      archives: 'Arquivos'
+      categories: 'Categorias'
+      popular_posts: 'Postagens populares'
     menu:
         admin_panel: 'Painel do Admin'
+        blog:           
+          do_it_yourself: 'Faça você mesmo'
+          inspiration: 'Inspiração'
+          label: 'Blog'
         home: 'Início'
-        blog: 'Blog'
     pagination:
       first: "&laquo; Primeira"
       last: "Última &raquo;"

@@ -1,33 +1,43 @@
 <div class="home-post">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 tzblog-default">
-        <% @posts.each do |post| %>
-          <article id="post-<%= post.id %>" class="post-<%= post.id %> post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-love tag-songs blog-post">
-            <% unless post.main_image.nil? %>
-              <div class="tzblog-img tzblog-format">
-                <%= image_tag post.main_image.url(:cropped), class: 'attachment-post-thumbnail wp-post-image img-responsive' %>
+  <div class="tzblog-columns">
+    <div class="container">
+      <div class="row tzshow_sidebar">
+        <div class="col-md-9">
+          <% @posts.each do |post| %>
+            <article id="post-<%= post.id %>" class="post-<%= post.id %> post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-love tag-songs blog-post">
+              <% unless post.main_image.nil? %>
+                <div class="tzblog-img tzblog-format">
+                  <%= image_tag post.main_image.url(:cropped), class: 'attachment-post-thumbnail wp-post-image img-responsive' %>
+                </div>
+              <% end %>
+              
+              <h2 class="tzblog-title"><%= link_to post.title, post_path(post.id) %></h2>
+
+              <div class="blog_meta">
+                <span class="tzblog_date">
+                  <%= l post.created_at %>
+                </span>
+
+                <span class="tztags_link">
+                  <% post.tags.each do |tag| %>
+                    <%= link_to tag.name, tag_path(tag.name) %>
+                  <% end %>
+                </span>
               </div>
-            <% end %>
-            <h2 class="tzblog-title"><%= link_to post.title, post_path(post.id) %></h2>
-            <div class="blog_meta">
-              <span class="tzblog_date">
-                <%= l post.created_at %>
-              </span>
-              <span class="tztags_link">
-                <% post.tags.each do |tag| %>
-                  <%= link_to tag.name, tag_path(tag.name) %>
-                <% end %>
-              </span>
-            </div>
-            <div class="tzthe_content">
-              <p><%= post.introduction %></p>
-              <%= link_to 'VER MAIS', post_path(post.id), class: 'more-link' %>
-            </div>
-          </article>
-        <% end %>
-        <div class="tzpagenavi-blog">
-          <%= paginate @posts %>
+              <div class="tzthe_content">
+                <p><%= post.introduction %></p>
+                <%= link_to 'VER MAIS', post_path(post.id), class: 'more-link' %>
+              </div>
+            </article>
+          <% end %>
+
+          <div class="tzpagenavi-blog">
+            <%= paginate @posts %>
+          </div>
+        </div>
+
+        <div class="col-md-3 tzsidebar-event">
+          <%= render 'right_section' %>
         </div>
       </div>
     </div>
