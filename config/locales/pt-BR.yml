@@ -24,14 +24,14 @@ pt-BR:
     app_name: 'DIcore Online'
     or: 'Ou'
   activerecord:
-    models:      
+    models:
       user:
         one: 'Usuário'
         other: 'Usuários'
   controllers:
     app:
   views:
-    admin:      
+    admin:
     app:
       auth:
         hello_guest: 'Olá, visitante'
@@ -43,13 +43,15 @@ pt-BR:
         sign_out: 'Sair'
         remember_password: 'Lembrar senha'
         sign_up: 'Criar conta'
+        recover_password: 'Recuperar Senha'
+        recover_password_msg: 'Digite seu email para receber as instruções de recuperação de senha'
       are_you_sure: 'Tem certeza?'
       back: 'Voltar'
       destroy: 'Remover'
       details: 'Detalhes'
       edit: 'Editar'
       fepb: 'FEPB'
-      manage_users: 'Gerenciar usuários'      
+      manage_users: 'Gerenciar usuários'
       new: 'Novo'
       select_one: 'Selecione...'
       show: 'Exibir'
@@ -62,17 +64,17 @@ pt-BR:
       last: "Última &raquo;"
       previous: "&lsaquo; Anterior"
       next: "Próxima &rsaquo;"
-      truncate: "&hellip;"    
+      truncate: "&hellip;"
     user:
       edit:
         title: 'Editar usuário'
       my_profile: 'Minha conta'
-  models:    
+  models:
     user:
       cep: 'CEP'
       cpf: 'CPF'
       city: Cidade
-      email: E-mail      
+      email: E-mail
       name: Nome
       password: Senha
       password_confirmation: 'Confirmação de senha'
@@ -93,7 +95,7 @@ pt-BR:
     - Sex
     - Sáb
     abbr_month_names:
-    - 
+    -
     - Jan
     - Fev
     - Mar
@@ -119,7 +121,7 @@ pt-BR:
       long: "%d de %B de %Y"
       short: "%d de %B"
     month_names:
-    - 
+    -
     - Janeiro
     - Fevereiro
     - Março
