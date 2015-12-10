@@ -21,7 +21,11 @@ class PostQuery
     end
 
     def published_ordered
-      where(draft: false).order('created_at DESC')
+      where(draft: false).order(created_at: :desc)
+    end
+
+    def by_month(date)
+      where(created_at: date.beginning_of_month..date.end_of_month).order(created_at: :desc)
     end
   end
 end

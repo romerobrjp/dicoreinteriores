@@ -1,7 +1,7 @@
 class BlogController < ApplicationController
   layout "blog"
 
-  before_action :load_archives, :load_categories, only: :index
+  before_action :load_archives, :load_categories, only: [:index, :by_category, :by_month]
 
   def index    
     @posts = PostQuery.new.search.published_ordered.page(params.fetch(:page, 1))
@@ -9,6 +9,11 @@ class BlogController < ApplicationController
 
   def show
     @post = Post.find_by_id_and_draft!(params[:id], false)
+  end  
+
+  def tag
+    @posts = Post.tagged_with(params[:tag]).published_ordered.page(params.fetch(:page, 1))
+    render 'index'
   end
 
   def by_category    
@@ -16,8 +21,8 @@ class BlogController < ApplicationController
     render 'index'
   end
 
-  def tag
-    @posts = Post.tagged_with(params[:tag]).published_ordered.page(params.fetch(:page, 1))
+  def by_month
+    @posts = PostQuery.new.search.by_month(params[:month].to_date).page(params.fetch(:page, 1))
     render 'index'
   end
 
