@@ -15,5 +15,9 @@ class PostQuery
     def archives
       order(created_at: :desc).limit(5)
     end
+
+    def categories
+      join(:categories)
+    end
   end
 end
