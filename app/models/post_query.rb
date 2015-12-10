@@ -13,11 +13,11 @@ class PostQuery
     end
 
     def archives
-      order(created_at: :desc).limit(5)
+      group_by { |m| m.created_at.beginning_of_month }
     end
 
-    def categories
-      join(:categories)
+    def by_category(category)
+      where(category: category)
     end
   end
 end

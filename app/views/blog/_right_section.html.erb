@@ -30,9 +30,9 @@
         <%= t("views.blog.archives") %> 
     </h3>
 
-    <% @archives.each do |post| %>
+    <% @archives.each do |k,v| %>
         <li>
-            <%= link_to l(post.created_at.to_date, format: :short), post %>
+            <%= link_to l(k.to_date, format: :archives_date), root_path %>
         </li>
     <% end %>
 </aside>
@@ -45,7 +45,7 @@
     <ul>
         <% @categories.each do |categ| %>
             <li class="cat-item cat-item-14">
-                <%= link_to categ.name, blog_path %>
+                <%= link_to categ.name, by_category_path(categ.name) %>
             </li>
         <% end %>
     </ul>

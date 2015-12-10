@@ -18,5 +18,4 @@ class Post < ActiveRecord::Base
   def self.published_ordered
     Post.where(draft: false).order('created_at DESC')
   end
-
 end
