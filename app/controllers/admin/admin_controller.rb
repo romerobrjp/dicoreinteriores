@@ -1,8 +1,10 @@
 class Admin::AdminController < ApplicationController
   layout 'admin'
 
+  before_action :authenticate_user!
+
   def current_admin
-    Admin.first
+    current_user
   end
 
 end

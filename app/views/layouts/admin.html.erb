@@ -21,7 +21,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <%= link_to root_path, class: 'logo' do %> 
+        <%= link_to root_path, class: 'logo' do %>
           <span class="logo-mini"><b>D</b>ON</span>
           <span class="logo-lg"> <b> <%= t("generic.app_name") %> </b>
         <% end %>
@@ -99,17 +99,17 @@
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <%= image_tag Admin.first.avatar.url(:thumb), class: 'user-image' %>
+                  <%= image_tag current_user.avatar.url(:thumb), class: 'user-image' %>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs"><%= Admin.first.name %></span>
+                  <span class="hidden-xs"><%= current_user.name %></span>
                 </a>
 
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <%= image_tag Admin.first.avatar.url(:thumb), class: 'img-circle' %>
+                    <%= image_tag current_user.avatar.url(:thumb), class: 'img-circle' %>
                     <p>
-                      <%= Admin.first.name %>
+                      <%= current_user.name %>
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -137,9 +137,7 @@
       <aside class="main-sidebar">
         <section class="sidebar">
           <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+            <li class="header">MENU</li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pencil-square-o"></i>
@@ -177,6 +175,11 @@
                   <% end %>
                 </li>
               </ul>
+            </li>
+            <li>
+              <%= link_to admin_users_path do %>
+                <i class="fa fa-users"></i> <span>Usuários</span>
+              <% end %>
             </li>
           </ul>
         </section>
