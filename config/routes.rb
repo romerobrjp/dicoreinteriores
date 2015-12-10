@@ -6,12 +6,17 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  devise_for :users
+  # devise_for :users
 
   namespace :admin do
     resources :posts
     resources :assets
   end
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

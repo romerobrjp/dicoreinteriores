@@ -11,5 +11,4 @@ class BlogController < ApplicationController
     @posts = Post.tagged_with(params[:tag]).published_ordered.page(params.fetch(:page, 1))
     render 'index'
   end
-
 end
