@@ -4,7 +4,7 @@ class BlogController < ApplicationController
   before_action :load_archives, :load_categories, only: :index
 
   def index    
-    @posts = Post.published_ordered.page(params.fetch(:page, 1))
+    @posts = PostQuery.new.search.published_ordered.page(params.fetch(:page, 1))
   end
 
   def show

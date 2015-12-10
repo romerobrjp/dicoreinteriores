@@ -19,5 +19,9 @@ class PostQuery
     def by_category(category)
       where(category: category)
     end
+
+    def published_ordered
+      where(draft: false).order('created_at DESC')
+    end
   end
 end
