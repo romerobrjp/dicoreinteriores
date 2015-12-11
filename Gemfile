@@ -41,6 +41,8 @@ gem 'redcarpet'
 gem 'kaminari', "~> 0.16.3"
 gem 'puma'
 
+gem 'foreman', require: false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -57,5 +59,6 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano'
   gem 'capistrano-rbenv', '~> 2.0'
+
 
 end
