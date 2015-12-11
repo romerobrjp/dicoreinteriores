@@ -24,18 +24,24 @@ pt-BR:
     app_name: 'DIcore Online'
     are_you_sure: 'Tem certeza?'
     back: 'Voltar'
+    cancel: 'Cancelar'
+    copyright_msg: 'Todos os direitos reservados'
     created_at: 'Criado em'
     description: 'Descrição'
     destroy: 'Remover'
     details: 'Detalhes'
     edit: 'Editar'
     file: 'Arquivo'
-    manage_users: 'Gerenciar usuários'      
+    manage_users: 'Gerenciar usuários'
+    message: 'Mensagem'
+    messages: 'Mensagens'
     new: 'Novo'
     or: 'Ou'
     select_one: 'Selecione...'
     show: 'Exibir'
     title: 'Título'
+    view_all_f: 'Ver todas'
+    view_all_m: 'Ver todos'
   activerecord:
     attributes:
       asset:
@@ -63,8 +69,14 @@ pt-BR:
         other: 'Postagens'
   controllers:
     app:
+    assets:
+      create:
+        success: 'Arquivo criado com sucesso'
+    posts:
+      create:
+        success: 'Postagem criada com sucesso'
   views:
-    admin:      
+    admin:
       draft: 'Rascunho'
       menu:
         assets: 'Arquivos'
@@ -73,6 +85,7 @@ pt-BR:
       submenu:
         assets: 'Arquivos'
         new_asset: 'Novo arquivo'
+      status: 'Situação'
       member_since: 'Membro desde'
       my_profile: 'Meu perfil'
       new_asset: 'Novo arquivo'
@@ -80,9 +93,14 @@ pt-BR:
       published: 'Publicado'
       published_at: 'Publicado em'
       recent_activities: 'Atividades recentes'
-      title: 'Painel do amin'
+      title: 'Painel de administração'
       tag_list: 'Tags'
       tag_list_obs: 'Separadas por vírgula'
+      view_all_messages: 'Ver todas as mensagens'
+      you_have_one_message: "Você tem 1 nova mensagem"
+      you_have_n_messages: "Você tem %{msg_count} novas mensagens"
+      you_have_one_notification: "Você tem 1 notificação"
+      you_have_n_notifications: "Você tem %{notif_count} notificações"
     app:
       auth:
         hello_guest: 'Olá, visitante'

@@ -28,7 +28,7 @@ class Admin::AssetsController < Admin::AdminController
 
     respond_to do |format|
       if @asset.save
-        format.html { redirect_to admin_asset_url(@asset), notice: 'Asset was successfully created.' }
+        format.html { redirect_to admin_asset_url(@asset), notice: t('controllers.assets.create.success') }
         format.json { render :show, status: :created, location: @asset }
       else
         format.html { render :new }

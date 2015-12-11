@@ -29,7 +29,7 @@ class Admin::PostsController < Admin::AdminController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to [:admin, @post], notice: 'Post was successfully created.' }
+        format.html { redirect_to [:admin, @post], notice: t('controllers.assets.create.success') }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
