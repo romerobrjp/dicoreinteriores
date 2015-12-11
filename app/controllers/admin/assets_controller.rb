@@ -42,7 +42,7 @@ class Admin::AssetsController < Admin::AdminController
   def update
     respond_to do |format|
       if @asset.update(admin_asset_params)
-        format.html { redirect_to admin_asset_url(@asset), notice: 'Asset was successfully updated.' }
+        format.html { redirect_to admin_asset_url(@asset), notice: t('controllers.assets.udpate.success') }
         format.json { render :show, status: :ok, location: @asset }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::AssetsController < Admin::AdminController
   def destroy
     @asset.destroy
     respond_to do |format|
-      format.html { redirect_to admin_assets_url, notice: 'Asset was successfully destroyed.' }
+      format.html { redirect_to admin_assets_url, notice: t('controllers.assets.destroy.success') }
       format.json { head :no_content }
     end
   end

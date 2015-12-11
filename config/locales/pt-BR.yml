@@ -72,9 +72,17 @@ pt-BR:
     assets:
       create:
         success: 'Arquivo criado com sucesso'
+      destroy:
+        success: 'Arquivo removido com sucesso'
+      update:
+        success: 'Arquivo atualizado com sucesso'
     posts:
       create:
         success: 'Postagem criada com sucesso'
+      destroy:
+        success: 'Postagem removida com sucesso'
+      update:
+        success: 'Postagem atualizada com sucesso'
   views:
     admin:
       draft: 'Rascunho'
