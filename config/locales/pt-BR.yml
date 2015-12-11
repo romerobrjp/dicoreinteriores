@@ -22,16 +22,56 @@
 pt-BR:
   generic:
     app_name: 'DIcore Online'
+    created_at: 'Criado em'
+    description: 'Descrição'
+    file: 'Arquivo'
     or: 'Ou'
+    title: 'Título'
   activerecord:
-    models:      
+    attributes:
+      asset:
+        description: 'Descrição'
+        file: 'Arquivo'
+        created_at: 'Criado em'
+      category: 'Categoria'
+      post:
+        body: 'Corpo da postagem'
+        category: 'Categoria'
+        draft: 'Rascunho'
+        main_image: 'Imagem principal'
+        introduction: 'Introdução'
+        tag_list: 'Tags'
+        title: 'Título'
+    models:
+      asset:
+        one: 'Arquivo'
+        other: 'Arquivos'
       user:
         one: 'Usuário'
         other: 'Usuários'
+      post:
+        one: 'Postagem'
+        other: 'Postagens'
   controllers:
     app:
   views:
-    admin:
+    admin:      
+      draft: 'Rascunho'
+      menu:
+        assets: 'Arquivos'
+        blog: 'Blog'
+        title: 'Menu'
+      submenu:
+        assets: 'Arquivos'
+        new_asset: 'Novo arquivo'
+      my_profile: 'Meu perfil'
+      new_asset: 'Novo arquivo'
+      new_post: 'Nova postagem'
+      published: 'Publicado'
+      published_at: 'Publicado em'
+      title: 'Painel do amin'
+      tag_list: 'Tags'
+      tag_list_obs: 'Separadas por vírgula'
     app:
       auth:
         hello_guest: 'Olá, visitante'
