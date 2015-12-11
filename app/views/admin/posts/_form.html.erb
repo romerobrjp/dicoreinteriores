@@ -29,7 +29,7 @@
         <%= f.input :main_image %>
       </div>
       <div class="col-md-6">
-        <%= f.input :tag_list, input_html: {value: @post.tag_list.to_s} %>
+        <%= f.input "#{t('views.admin.tag_list')} (#{t('views.admin.tag_list_obs')})", input_html: {value: @post.tag_list.to_s} %>
       </div>
     </div>
 
@@ -42,7 +42,6 @@
 
   <div class="box-footer">
     <%= f.submit class: 'btn btn-primary' %>
-    <%= link_to 'Cancel', admin_posts_path, class: 'btn btn-danger' %>
+    <%= link_to t('generic.cancel'), admin_posts_path, class: 'btn btn-danger' %>
   </div>
-
 <% end %>

@@ -1,8 +1,8 @@
 <div class="box-body">
-<p id="notice"><%= notice %></p>
+  <div id="notice" class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
 
-<%= @asset.file.url %>
-
-<%= link_to 'Edit', edit_admin_asset_path(@asset) %> |
-<%= link_to 'Back', admin_assets_path %>
+  <%= link_to t('generic.edit'), edit_admin_asset_path(@asset), class: 'btn btn-primary' %>
+  <%= link_to t('generic.back'), admin_assets_path, class: 'btn btn-danger' %>
 </div>

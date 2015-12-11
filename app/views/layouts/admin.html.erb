@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Starter</title>
+    <title><%= t('views.admin.title') %></title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <%= stylesheet_link_tag 'admin/application', media: 'all' %>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -22,7 +22,7 @@
 
         <!-- Logo -->
         <%= link_to root_path, class: 'logo' do %> 
-          <span class="logo-mini"><b>D</b>ON</span>
+          <span class="logo-mini"><b>DI</b>On</span>
           <span class="logo-lg"> <b> <%= t("generic.app_name") %> </b>
         <% end %>
 
@@ -41,11 +41,11 @@
                 <!-- Menu toggle button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-envelope-o"></i>
-                  <span class="label label-success">4</span>
+                  <span class="label label-success">5</span>
                 </a>
 
                 <ul class="dropdown-menu">
-                  <li class="header">You have 4 messages</li>
+                  <li class="header"><%= t 'views.admin.you_have_n_messages', msg_count: 5 %></li>
                   <li>
                     <!-- inner menu: contains the messages -->
                     <ul class="menu">
@@ -58,16 +58,16 @@
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
-                            Support Team
+                            Usuário 1
                             <small><i class="fa fa-clock-o"></i> 5 mins</small>
                           </h4>
                           <!-- The message -->
-                          <p>Why not buy a new awesome theme?</p>
+                          <p>Olá, tenho uma dúvida</p>
                         </a>
                       </li><!-- end message -->
                     </ul><!-- /.menu -->
                   </li>
-                  <li class="footer"><a href="#">See All Messages</a></li>
+                  <li class="footer"><a href="#"><%= t('views.admin.view_all_messages') %></a></li>
                 </ul>
               </li><!-- /.messages-menu -->
 
@@ -76,21 +76,21 @@
                 <!-- Menu toggle button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning">10</span>
+                  <span class="label label-warning">5</span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li class="header">You have 10 notifications</li>
+                  <li class="header"><%= t 'views.admin.you_have_n_notifications', notif_count: 5 %></li>
                   <li>
                     <!-- Inner Menu: contains the notifications -->
                     <ul class="menu">
                       <li><!-- start notification -->
                         <a href="#">
-                          <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                          <i class="fa fa-users text-aqua"></i> 5 novas solicitações de projeto
                         </a>
                       </li><!-- end notification -->
                     </ul>
                   </li>
-                  <li class="footer"><a href="#">View all</a></li>
+                  <li class="footer"><a href="#"><%= t('generic.view_all_f') %></a></li>
                 </ul>
               </li>
 
@@ -110,13 +110,13 @@
                     <%= image_tag Admin.first.avatar.url(:thumb), class: 'img-circle' %>
                     <p>
                       <%= Admin.first.name %>
-                      <small>Member since Nov. 2012</small>
+                      <small><%= t('views.admin.member_since') %> <%= l(current_user.created_at.to_date, format: :month_year) %></small>
                     </p>
                   </li>
 
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="#" class="btn btn-default btn-flat"><%= t('views.admin.my_profile') %></a>
                     </div>
 
                     <div class="pull-right">
@@ -137,24 +137,24 @@
       <aside class="main-sidebar">
         <section class="sidebar">
           <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+            <li class="header"><%= t('views.admin.menu.title') %></li>
+            <!-- <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li> -->
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pencil-square-o"></i>
-                <span>Blog</span>
+                <span><%= t('views.admin.menu.blog') %></span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li>
                   <%= link_to admin_posts_path do %>
-                    <i class="fa fa-circle-o"></i> All Posts
+                    <i class="fa fa-circle-o"></i> <%= t('activerecord.models.post.other') %>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to new_admin_post_path do %>
-                    <i class="fa fa-circle-o"></i> New Post
+                    <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.new_post') %>
                   <% end %>
                 </li>
               </ul>
@@ -162,18 +162,18 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
-                <span>Files</span>
+                <span><%= t('views.admin.menu.assets') %></span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li>
                   <%= link_to admin_assets_path do %>
-                    <i class="fa fa-circle-o"></i> All Files
+                    <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.assets') %>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to new_admin_asset_path do %>
-                    <i class="fa fa-circle-o"></i> New File
+                    <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.new_asset') %>
                   <% end %>
                 </li>
               </ul>
@@ -198,9 +198,9 @@
 
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          Anything you want
+          <%= t('views.admin.title') %>
         </div>
-        <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; <%= Time.new.year %> <a href="#"><%= t('generic.app_name') %></a>.</strong> <%= t('generic.copyright_msg') %>
       </footer>
 
       <aside class="control-sidebar control-sidebar-dark">
@@ -210,7 +210,7 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="control-sidebar-home-tab">
-            <h3 class="control-sidebar-heading">Recent Activity</h3>
+            <!-- <h3 class="control-sidebar-heading"><%= t('views.admin.recent_activities') %></h3>
             <ul class="control-sidebar-menu">
               <li>
                 <a href="javascript::;">
@@ -221,9 +221,9 @@
                   </div>
                 </a>
               </li>
-            </ul>
+            </ul> -->
 
-            <h3 class="control-sidebar-heading">Tasks Progress</h3>
+            <!-- <h3 class="control-sidebar-heading">Tasks Progress</h3>
             <ul class="control-sidebar-menu">
               <li>
                 <a href="javascript::;">
@@ -236,7 +236,7 @@
                   </div>
                 </a>
               </li>
-            </ul>
+            </ul> -->
 
           </div>
           <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>

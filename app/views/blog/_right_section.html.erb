@@ -47,7 +47,7 @@
     <ul>
         <% @archives.each do |k,v| %>
             <li class="cat-item cat-item-14">
-                <%= link_to l(k.to_date, format: :archives_date), by_month_path(k.to_date) %>
+                <%= link_to l(k.to_date, format: :month_year), by_month_path(k.to_date) %>
             </li>
         <% end %>
     </ul>
