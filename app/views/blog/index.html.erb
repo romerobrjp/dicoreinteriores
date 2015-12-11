@@ -26,7 +26,7 @@
               </div>
               <div class="tzthe_content">
                 <p><%= post.introduction %></p>
-                <%= link_to 'VER MAIS', post_path(post.id), class: 'more-link' %>
+                <%= link_to t('views.blog.see_more'), post_path(post.id), class: 'more-link' %>
               </div>
             </article>
           <% end %>

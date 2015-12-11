@@ -38,7 +38,7 @@
             <div class="btn-group btn-group-xs" role="group">
               <%= link_to edit_admin_asset_path(asset), class: 'btn btn-warning' do %>
               <i class="fa fa-pencil"></i><% end %>
-              <%= link_to admin_asset_path(asset), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+              <%= link_to admin_asset_path(asset), method: :delete, data: { confirm: t('generic.are_you_sure') }, class: 'btn btn-danger' do %>
               <i class="fa fa-trash"></i><% end %>
             </div>
           </td>

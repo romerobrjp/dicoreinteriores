@@ -22,10 +22,19 @@
 pt-BR:
   generic:
     app_name: 'DIcore Online'
+    are_you_sure: 'Tem certeza?'
+    back: 'Voltar'
     created_at: 'Criado em'
     description: 'Descrição'
+    destroy: 'Remover'
+    details: 'Detalhes'
+    edit: 'Editar'
     file: 'Arquivo'
+    manage_users: 'Gerenciar usuários'      
+    new: 'Novo'
     or: 'Ou'
+    select_one: 'Selecione...'
+    show: 'Exibir'
     title: 'Título'
   activerecord:
     attributes:
@@ -64,11 +73,13 @@ pt-BR:
       submenu:
         assets: 'Arquivos'
         new_asset: 'Novo arquivo'
+      member_since: 'Membro desde'
       my_profile: 'Meu perfil'
       new_asset: 'Novo arquivo'
       new_post: 'Nova postagem'
       published: 'Publicado'
       published_at: 'Publicado em'
+      recent_activities: 'Atividades recentes'
       title: 'Painel do amin'
       tag_list: 'Tags'
       tag_list_obs: 'Separadas por vírgula'
@@ -82,21 +93,12 @@ pt-BR:
         sign_in_msg: 'Autentique-se para iniciar a sessão'
         sign_out: 'Sair'
         remember_password: 'Lembrar senha'
-        sign_up: 'Criar conta'
-      are_you_sure: 'Tem certeza?'
-      back: 'Voltar'
-      destroy: 'Remover'
-      details: 'Detalhes'
-      edit: 'Editar'
-      fepb: 'FEPB'
-      manage_users: 'Gerenciar usuários'      
-      new: 'Novo'
-      select_one: 'Selecione...'
-      show: 'Exibir'
+        sign_up: 'Criar conta'      
     blog:
       archives: 'Arquivos'
       categories: 'Categorias'
       popular_posts: 'Postagens populares'
+      see_more: 'Ver mais'
     menu:
         admin_panel: 'Painel do Admin'
         blog:           
@@ -165,7 +167,7 @@ pt-BR:
       default: "%d/%m/%Y"
       long: "%d de %B de %Y"
       short: "%d de %B"
-      archives_date: "%B de %Y"
+      month_year: "%B de %Y"
     month_names:
     - 
     - Janeiro
@@ -345,4 +347,5 @@ pt-BR:
       default: "%a, %d de %B de %Y, %H:%M:%S"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
+      month_year: "%B de %Y"
     pm: ''

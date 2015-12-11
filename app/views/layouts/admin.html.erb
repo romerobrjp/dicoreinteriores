@@ -22,7 +22,7 @@
 
         <!-- Logo -->
         <%= link_to root_path, class: 'logo' do %> 
-          <span class="logo-mini"><b>D</b>ON</span>
+          <span class="logo-mini"><b>DI</b>On</span>
           <span class="logo-lg"> <b> <%= t("generic.app_name") %> </b>
         <% end %>
 
@@ -110,7 +110,7 @@
                     <%= image_tag Admin.first.avatar.url(:thumb), class: 'img-circle' %>
                     <p>
                       <%= Admin.first.name %>
-                      <small>Member since Nov. 2012</small>
+                      <small><%= t('views.admin.member_since') %> <%= l(current_user.created_at.to_date, format: :month_year) %></small>
                     </p>
                   </li>
 
@@ -210,7 +210,7 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="control-sidebar-home-tab">
-            <h3 class="control-sidebar-heading">Recent Activity</h3>
+            <!-- <h3 class="control-sidebar-heading"><%= t('views.admin.recent_activities') %></h3>
             <ul class="control-sidebar-menu">
               <li>
                 <a href="javascript::;">
@@ -221,9 +221,9 @@
                   </div>
                 </a>
               </li>
-            </ul>
+            </ul> -->
 
-            <h3 class="control-sidebar-heading">Tasks Progress</h3>
+            <!-- <h3 class="control-sidebar-heading">Tasks Progress</h3>
             <ul class="control-sidebar-menu">
               <li>
                 <a href="javascript::;">
@@ -236,7 +236,7 @@
                   </div>
                 </a>
               </li>
-            </ul>
+            </ul> -->
 
           </div>
           <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
