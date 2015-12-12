@@ -57,6 +57,20 @@ pt-BR:
         introduction: 'Introdução'
         tag_list: 'Tags (Separadas por vírgula)'
         title: 'Título'
+      user:
+        name: Nome
+        surname: Sobrenome
+        email: Email
+        password: Senha
+        cpf: CPF
+        phone1: Telefone (principal)
+        phone2: Telefone (secundário)
+        street: Rua
+        street_number: Número
+        street_complement: Complemento
+        city: Cidade
+        state: Estado
+        zip_code: CEP
     models:
       asset:
         one: 'Arquivo'
@@ -93,6 +107,7 @@ pt-BR:
       submenu:
         assets: 'Arquivos'
         new_asset: 'Novo arquivo'
+        new_post: 'Nova Postagem'
       status: 'Situação'
       member_since: 'Membro desde'
       my_profile: 'Meu perfil'
@@ -127,7 +142,7 @@ pt-BR:
       see_more: 'Ver mais'
     menu:
         admin_panel: 'Painel do Admin'
-        blog:           
+        blog:
           do_it_yourself: 'Faça você mesmo'
           inspiration: 'Inspiração'
           label: 'Blog'
