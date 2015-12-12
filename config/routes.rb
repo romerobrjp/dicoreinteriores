@@ -12,11 +12,15 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :posts
     resources :assets
+    resources :users
+    resources :admins, controller: 'users', only: [:create, :update, :new, :edit], type: 'admin'
+    resources :customers, controller: 'users', only: [:create, :update, :new, :edit], type: 'customer'
   end
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }  
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
+  }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

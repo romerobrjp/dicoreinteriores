@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<% content_for :page_header, 'Usuários do Sistema' %>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Todos os Usuários</h3>
+    <div class="box-tools pull-right">
+      <div class="btn-group btn-group-sm">
+        <%= link_to 'New Admin', new_admin_admin_path, class: 'btn btn-primary' %>
+        <%= link_to 'New Customer', new_admin_customer_path, class: 'btn btn-info' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th class="hidden-sm hidden-xs">Sobrenome</th>
+          <th>Email</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td class="hidden-sm hidden-xs"><%= user.surname %></td>
+          <td><%= user.email %></td>
+          <td><%= user.type %></td>
+          <td>
+            <div class="btn-group btn-group-xs" role="group">
+              <%= link_to admin_user_path(user), class: 'btn btn-primary' do %>
+              <i class="fa fa-eye"></i><% end %>
+              <%= link_to edit_admin_user_path(user), class: 'btn btn-warning' do %>
+              <i class="fa fa-pencil"></i><% end %>
+              <%= link_to admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+              <i class="fa fa-trash"></i><% end %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
