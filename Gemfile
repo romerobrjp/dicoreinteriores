@@ -59,6 +59,5 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano'
   gem 'capistrano-rbenv', '~> 2.0'
-
-
+  gem 'capistrano-secrets-yml', '~> 1.0.0'
 end

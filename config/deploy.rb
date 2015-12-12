@@ -9,7 +9,7 @@ set :bundle_bins, fetch(:bundle_bins, []).push('foreman')
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/dicore/apps/dicoreonline"
+set :deploy_to, "/home/dicoreonline/apps/dicoreonline"
 
 set :rbenv_type, :user
 set :rbenv_ruby, File.read('.ruby-version').strip
@@ -90,6 +90,7 @@ end
 
 namespace :foreman do
   set :foreman_application, "#{fetch(:application)}-#{fetch(:rails_env)}"
+  set :user, 'dicoreonline'
   desc "Export the Procfile to Ubuntu's upstart scripts"
   task :export do
     on roles(:app) do |host|
