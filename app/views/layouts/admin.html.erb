@@ -99,7 +99,7 @@
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <%= image_tag Admin.first.avatar.url(:thumb), class: 'user-image' %>
+                  <%= image_tag current_user.avatar.url(:thumb), class: 'user-image' %>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs"><%= Admin.first.name %></span>
                 </a>
@@ -107,9 +107,9 @@
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <%= image_tag Admin.first.avatar.url(:thumb), class: 'img-circle' %>
+                    <%= image_tag current_user.avatar.url(:thumb), class: 'img-circle' %>
                     <p>
-                      <%= Admin.first.name %>
+                      <%= current_user.name %>
                       <small><%= t('views.admin.member_since') %> <%= l(current_user.created_at.to_date, format: :month_year) %></small>
                     </p>
                   </li>
@@ -126,9 +126,9 @@
                 </ul>
               </li>
 
-              <li>
+              <!-- <li>
                 <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </nav>
