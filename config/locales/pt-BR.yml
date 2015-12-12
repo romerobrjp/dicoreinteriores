@@ -55,7 +55,7 @@ pt-BR:
         draft: 'Rascunho'
         main_image: 'Imagem principal'
         introduction: 'Introdução'
-        tag_list: 'Tags'
+        tag_list: 'Tags (Separadas por vírgula)'
         title: 'Título'
     models:
       asset:
@@ -102,8 +102,6 @@ pt-BR:
       published_at: 'Publicado em'
       recent_activities: 'Atividades recentes'
       title: 'Painel de administração'
-      tag_list: 'Tags'
-      tag_list_obs: 'Separadas por vírgula'
       view_all_messages: 'Ver todas as mensagens'
       you_have_one_message: "Você tem 1 nova mensagem"
       you_have_n_messages: "Você tem %{msg_count} novas mensagens"
