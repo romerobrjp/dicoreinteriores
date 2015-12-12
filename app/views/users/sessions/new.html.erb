@@ -31,13 +31,14 @@
           </div>
         <% end %>
 
+
         <br />
 
         <div class="row text-center">
           <div class="col-xs-6">
-            <%= link_to t('views.app.auth.forgot_password'), new_password_path(:user) %>
-            <br>
+            <%= link_to new_password_path(:user), t('views.app.auth.forgot_password') %>
           </div>
+
           <!--
           <div class="col-xs-6">
             <a href="register.html" class="text-center"><%= t('views.app.auth.sign_up') %></a>
@@ -46,7 +47,8 @@
         </div>
 
         <br />
-        <br />
+
+        <%= render 'shared/messages' %>
 
       </div>
     </div>
