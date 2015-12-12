@@ -1,17 +1,17 @@
 <% content_for :page_header, 'Arquivos' %>
 <div class="box box-primary">
   <div class="box-header with-border">
-    <h3 class="box-title">Assets</h3>
-    <%= link_to 'New Asset', new_admin_asset_path, class: 'btn btn-primary pull-right' %>
+    <h3 class="box-title"><%= t('views.admin.menu.assets') %></h3>
+    <%= link_to t('views.admin.new_asset'), new_admin_asset_path, class: 'btn btn-primary pull-right' %>
   </div>
 
   <div class="box-body">
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Description</th>
-          <th>File</th>
-          <th>Created at</th>
+          <th><%= t('generic.description') %></th>
+          <th><%= t('generic.file') %></th>
+          <th><%= t('generic.created_at') %></th>
           <th></th>
         </tr>
       </thead>
@@ -38,7 +38,7 @@
             <div class="btn-group btn-group-xs" role="group">
               <%= link_to edit_admin_asset_path(asset), class: 'btn btn-warning' do %>
               <i class="fa fa-pencil"></i><% end %>
-              <%= link_to admin_asset_path(asset), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+              <%= link_to admin_asset_path(asset), method: :delete, data: { confirm: t('generic.are_you_sure') }, class: 'btn btn-danger' do %>
               <i class="fa fa-trash"></i><% end %>
             </div>
           </td>
