@@ -1,0 +1,72 @@
+<aside id="recent-posts-2" class="widget_recent_entries widget">
+    <h3 class="module-title title-widget"> <%= t("views.blog.popular_posts") %> </h3>
+
+    <ul>
+        <% @posts.last(5) do |post| %>
+            <li>
+                <%= link_to post.title, post %>
+            </li>
+        <% end %>
+    </ul>
+</aside>
+
+<!-- <aside id="recent-comments-2" class="widget_recent_comments widget">
+    <h3 class="module-title title-widget">
+        <span>Recent Comments</span>
+    </h3>
+    
+    <ul id="recentcomments">
+        <li class="recentcomments">
+            <span class="comment-author-link">
+                <a href='#' rel='external nofollow' class='url'>Mr WordPress</a>
+            </span>
+            on <a href="#">Hello world!</a>
+        </li>
+    </ul>
+</aside> -->
+
+<aside id="categories-2" class="widget_categories widget">
+    <h3 class="module-title title-widget">
+        <%= t("views.blog.categories") %>
+    </h3>
+
+    <ul>
+        <% @categories.each do |categ| %>
+            <li class="cat-item cat-item-14">
+                <%= link_to categ.name, by_category_path(categ.name) %>
+            </li>
+        <% end %>
+    </ul>
+</aside>
+
+<aside id="archives-2" class="widget_archive widget">
+    <h3 class="module-title title-widget"> 
+        <%= t("views.blog.archives") %> 
+    </h3>
+
+    <ul>
+        <% @archives.each do |k,v| %>
+            <li class="cat-item cat-item-14">
+                <%= link_to l(k.to_date, format: :month_year), by_month_path(k.to_date) %>
+            </li>
+        <% end %>
+    </ul>
+</aside>
+
+<aside id="meta-2" class="widget_meta widget">
+    <h3 class="module-title title-widget"><span>Meta</span></h3>
+    <ul>
+        <li>
+            <a href="#">Log in</a>
+        </li>
+        <li>
+            <a href="#">Entries <abbr title="Really Simple Syndication">RSS</abbr></a>
+        </li>
+        <li>
+            <a href="#">Comments <abbr title="Really Simple Syndication">RSS</abbr></a>
+        </li>
+        <li>
+            <a href="#" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a>
+        </li>
+    </ul>
+</aside>

@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  root 'home#index'
 
   get '/blog' => 'blog#index'
   get '/blog/:id' => 'blog#show', as: 'post'
   get '/blog/tag/:tag' => 'blog#tag', as: 'tag'
-
-  root 'home#index'
+  get '/blog/posts/category/:category' => 'blog#by_category', as: 'by_category'
+  get '/blog/posts/month/:month' => 'blog#by_month', as: 'by_month'
 
   # devise_for :users
 
@@ -20,7 +21,6 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     passwords: 'users/passwords'
   }
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

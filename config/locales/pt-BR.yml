@@ -22,16 +22,93 @@
 pt-BR:
   generic:
     app_name: 'DIcore Online'
+    are_you_sure: 'Tem certeza?'
+    back: 'Voltar'
+    cancel: 'Cancelar'
+    copyright_msg: 'Todos os direitos reservados'
+    created_at: 'Criado em'
+    description: 'Descrição'
+    destroy: 'Remover'
+    details: 'Detalhes'
+    edit: 'Editar'
+    file: 'Arquivo'
+    manage_users: 'Gerenciar usuários'
+    message: 'Mensagem'
+    messages: 'Mensagens'
+    new: 'Novo'
     or: 'Ou'
+    select_one: 'Selecione...'
+    show: 'Exibir'
+    title: 'Título'
+    view_all_f: 'Ver todas'
+    view_all_m: 'Ver todos'
   activerecord:
+    attributes:
+      asset:
+        description: 'Descrição'
+        file: 'Arquivo'
+        created_at: 'Criado em'
+      category: 'Categoria'
+      post:
+        body: 'Corpo da postagem'
+        category: 'Categoria'
+        draft: 'Rascunho'
+        main_image: 'Imagem principal'
+        introduction: 'Introdução'
+        tag_list: 'Tags'
+        title: 'Título'
     models:
+      asset:
+        one: 'Arquivo'
+        other: 'Arquivos'
       user:
         one: 'Usuário'
         other: 'Usuários'
+      post:
+        one: 'Postagem'
+        other: 'Postagens'
   controllers:
     app:
+    assets:
+      create:
+        success: 'Arquivo criado com sucesso'
+      destroy:
+        success: 'Arquivo removido com sucesso'
+      update:
+        success: 'Arquivo atualizado com sucesso'
+    posts:
+      create:
+        success: 'Postagem criada com sucesso'
+      destroy:
+        success: 'Postagem removida com sucesso'
+      update:
+        success: 'Postagem atualizada com sucesso'
   views:
     admin:
+      draft: 'Rascunho'
+      menu:
+        assets: 'Arquivos'
+        blog: 'Blog'
+        title: 'Menu'
+      submenu:
+        assets: 'Arquivos'
+        new_asset: 'Novo arquivo'
+      status: 'Situação'
+      member_since: 'Membro desde'
+      my_profile: 'Meu perfil'
+      new_asset: 'Novo arquivo'
+      new_post: 'Nova postagem'
+      published: 'Publicado'
+      published_at: 'Publicado em'
+      recent_activities: 'Atividades recentes'
+      title: 'Painel de administração'
+      tag_list: 'Tags'
+      tag_list_obs: 'Separadas por vírgula'
+      view_all_messages: 'Ver todas as mensagens'
+      you_have_one_message: "Você tem 1 nova mensagem"
+      you_have_n_messages: "Você tem %{msg_count} novas mensagens"
+      you_have_one_notification: "Você tem 1 notificação"
+      you_have_n_notifications: "Você tem %{notif_count} notificações"
     app:
       auth:
         hello_guest: 'Olá, visitante'
@@ -43,22 +120,19 @@ pt-BR:
         sign_out: 'Sair'
         remember_password: 'Lembrar senha'
         sign_up: 'Criar conta'
-        recover_password: 'Recuperar Senha'
         recover_password_msg: 'Digite seu email para receber as instruções de recuperação de senha'
-      are_you_sure: 'Tem certeza?'
-      back: 'Voltar'
-      destroy: 'Remover'
-      details: 'Detalhes'
-      edit: 'Editar'
-      fepb: 'FEPB'
-      manage_users: 'Gerenciar usuários'
-      new: 'Novo'
-      select_one: 'Selecione...'
-      show: 'Exibir'
+    blog:
+      archives: 'Arquivos'
+      categories: 'Categorias'
+      popular_posts: 'Postagens populares'
+      see_more: 'Ver mais'
     menu:
         admin_panel: 'Painel do Admin'
+        blog:           
+          do_it_yourself: 'Faça você mesmo'
+          inspiration: 'Inspiração'
+          label: 'Blog'
         home: 'Início'
-        blog: 'Blog'
     pagination:
       first: "&laquo; Primeira"
       last: "Última &raquo;"
@@ -120,6 +194,7 @@ pt-BR:
       default: "%d/%m/%Y"
       long: "%d de %B de %Y"
       short: "%d de %B"
+      month_year: "%B de %Y"
     month_names:
     -
     - Janeiro
@@ -299,4 +374,5 @@ pt-BR:
       default: "%a, %d de %B de %Y, %H:%M:%S"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
+      month_year: "%B de %Y"
     pm: ''
