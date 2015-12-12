@@ -121,6 +121,7 @@ pt-BR:
         remember_password: 'Lembrar senha'
         sign_up: 'Criar conta'
         recover_password_msg: 'Digite seu email para receber as instruções de recuperação de senha'
+        recover_password: 'Recuperar Senha'
     blog:
       archives: 'Arquivos'
       categories: 'Categorias'
