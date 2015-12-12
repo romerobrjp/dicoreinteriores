@@ -3,7 +3,10 @@ lock '3.4.0'
 
 set :application, 'dicoreonline'
 set :repo_url, 'git@bitbucket.org:bolados-team/dicoreonline.git'
+set :default_stage, "staging"
+
 set :rails_env, fetch(:stage)
+
 set :bundle_bins, fetch(:bundle_bins, []).push('foreman')
 # Default branch is :master
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
