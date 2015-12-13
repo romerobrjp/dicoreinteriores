@@ -12,7 +12,7 @@ User.create!(
   email: 'admin@admin.com',
   cpf: '07644271481',
   phone1: '996-447-337',
-  password: '1234Mudar', 
+  password: '1234Mudar',
   type: 'Admin'
 )
 
@@ -29,10 +29,10 @@ User.create!(
 
 Category.create!(
   name: "Inspiração",
-  show_in_header: true
+  show_on_header: true
 )
 
 Category.create!(
   name: "Faça você mesmo",
-  show_in_header: true
+  show_on_header: true
 )
