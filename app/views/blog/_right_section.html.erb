@@ -1,15 +1,13 @@
-<aside class="widget_recent_entries widget" id="recent-posts-2">
-  <h3 class="module-title title-widget">
-    <%= t("views.blog.popular_posts") %>
-  </h3>
+<aside id="recent-posts-2" class="widget_recent_entries widget">
+    <h3 class="module-title title-widget"> <%= t("views.blog.populars") %> </h3>
 
-  <ul>
-    <% @posts.last(5) do |post| %>
-    <li>
-      <%= link_to post.title, post %>
-    </li>
-    <% end %>
-  </ul>
+    <ul>
+        <% @populars.each do |post| %>
+            <li class="cat-item cat-item-14">
+                <%= link_to post.title, post %>
+            </li>
+        <% end %>
+    </ul>
 </aside>
 
 <aside class="widget_categories widget" id="categories-2">

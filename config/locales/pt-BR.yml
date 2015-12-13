@@ -143,7 +143,7 @@ pt-BR:
     blog:
       archives: 'Arquivos'
       categories: 'Categorias'
-      popular_posts: 'Postagens populares'
+      populars: 'Postagens populares'
       see_more: 'Ver mais'
     menu:
         admin_panel: 'Painel do Admin'
