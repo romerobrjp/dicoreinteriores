@@ -48,7 +48,9 @@ pt-BR:
         description: 'Descrição'
         file: 'Arquivo'
         created_at: 'Criado em'
-      category: 'Categoria'
+      category:
+        name: Nome
+        show_on_header: Exibir na Barra Principal
       post:
         body: 'Corpo da postagem'
         category: 'Categoria'
@@ -81,6 +83,9 @@ pt-BR:
       post:
         one: 'Postagem'
         other: 'Postagens'
+      category:
+        one: 'Categoria'
+        other: 'Categorias'
   controllers:
     app:
     assets:

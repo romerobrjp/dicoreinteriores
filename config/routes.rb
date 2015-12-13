@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :posts
+    resources :categories, except: [:show]
     resources :assets
     resources :users
     resources :admins, controller: 'users', only: [:create, :update, :new, :edit], type: 'admin'
