@@ -48,15 +48,31 @@ pt-BR:
         description: 'Descrição'
         file: 'Arquivo'
         created_at: 'Criado em'
-      category: 'Categoria'
+      category:
+        name: Nome
+        show_on_header: Exibir na Barra Principal
       post:
         body: 'Corpo da postagem'
         category: 'Categoria'
         draft: 'Rascunho'
         main_image: 'Imagem principal'
         introduction: 'Introdução'
-        tag_list: 'Tags'
+        tag_list: 'Tags (Separadas por vírgula)'
         title: 'Título'
+      user:
+        name: Nome
+        surname: Sobrenome
+        email: Email
+        password: Senha
+        cpf: CPF
+        phone1: Telefone (principal)
+        phone2: Telefone (secundário)
+        street: Rua
+        street_number: Número
+        street_complement: Complemento
+        city: Cidade
+        state: Estado
+        zip_code: CEP
     models:
       asset:
         one: 'Arquivo'
@@ -67,6 +83,9 @@ pt-BR:
       post:
         one: 'Postagem'
         other: 'Postagens'
+      category:
+        one: 'Categoria'
+        other: 'Categorias'
   controllers:
     app:
     assets:
@@ -93,6 +112,7 @@ pt-BR:
       submenu:
         assets: 'Arquivos'
         new_asset: 'Novo arquivo'
+        new_post: 'Nova Postagem'
       status: 'Situação'
       member_since: 'Membro desde'
       my_profile: 'Meu perfil'
@@ -102,8 +122,6 @@ pt-BR:
       published_at: 'Publicado em'
       recent_activities: 'Atividades recentes'
       title: 'Painel de administração'
-      tag_list: 'Tags'
-      tag_list_obs: 'Separadas por vírgula'
       view_all_messages: 'Ver todas as mensagens'
       you_have_one_message: "Você tem 1 nova mensagem"
       you_have_n_messages: "Você tem %{msg_count} novas mensagens"
@@ -119,7 +137,9 @@ pt-BR:
         sign_in_msg: 'Autentique-se para iniciar a sessão'
         sign_out: 'Sair'
         remember_password: 'Lembrar senha'
-        sign_up: 'Criar conta'      
+        sign_up: 'Criar conta'
+        recover_password_msg: 'Digite seu email para receber as instruções de recuperação de senha'
+        recover_password: 'Recuperar Senha'
     blog:
       archives: 'Arquivos'
       categories: 'Categorias'
@@ -127,7 +147,7 @@ pt-BR:
       see_more: 'Ver mais'
     menu:
         admin_panel: 'Painel do Admin'
-        blog:           
+        blog:
           do_it_yourself: 'Faça você mesmo'
           inspiration: 'Inspiração'
           label: 'Blog'
@@ -137,17 +157,17 @@ pt-BR:
       last: "Última &raquo;"
       previous: "&lsaquo; Anterior"
       next: "Próxima &rsaquo;"
-      truncate: "&hellip;"    
+      truncate: "&hellip;"
     user:
       edit:
         title: 'Editar usuário'
       my_profile: 'Minha conta'
-  models:    
+  models:
     user:
       cep: 'CEP'
       cpf: 'CPF'
       city: Cidade
-      email: E-mail      
+      email: E-mail
       name: Nome
       password: Senha
       password_confirmation: 'Confirmação de senha'
@@ -168,7 +188,7 @@ pt-BR:
     - Sex
     - Sáb
     abbr_month_names:
-    - 
+    -
     - Jan
     - Fev
     - Mar
@@ -195,7 +215,7 @@ pt-BR:
       short: "%d de %B"
       month_year: "%B de %Y"
     month_names:
-    - 
+    -
     - Janeiro
     - Fevereiro
     - Março

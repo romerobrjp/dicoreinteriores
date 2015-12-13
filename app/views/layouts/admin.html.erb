@@ -21,7 +21,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <%= link_to root_path, class: 'logo' do %> 
+        <%= link_to root_path, class: 'logo' do %>
           <span class="logo-mini"><b>DI</b>On</span>
           <span class="logo-lg"> <b> <%= t("generic.app_name") %> </b>
         <% end %>
@@ -101,7 +101,7 @@
                   <!-- The user image in the navbar-->
                   <%= image_tag current_user.avatar.url(:thumb), class: 'user-image' %>
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs"><%= Admin.first.name %></span>
+                  <span class="hidden-xs"><%= current_user.name %></span>
                 </a>
 
                 <ul class="dropdown-menu">
@@ -138,8 +138,6 @@
         <section class="sidebar">
           <ul class="sidebar-menu">
             <li class="header"><%= t('views.admin.menu.title') %></li>
-            <!-- <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li> -->
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pencil-square-o"></i>
@@ -155,6 +153,11 @@
                 <li>
                   <%= link_to new_admin_post_path do %>
                     <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.new_post') %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to admin_categories_path do %>
+                    <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.categories') %>
                   <% end %>
                 </li>
               </ul>
@@ -178,6 +181,11 @@
                 </li>
               </ul>
             </li>
+            <li>
+              <%= link_to admin_users_path do %>
+                <i class="fa fa-users"></i> <span>Usuários</span>
+              <% end %>
+            </li>
           </ul>
         </section>
       </aside>
@@ -190,6 +198,20 @@
         </section>
 
         <section class="content">
+
+          <% if notice %>
+            <div class="alert alert-success alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <%= notice %>
+            </div>
+          <% end %>
+
+          <% if alert %>
+            <div class="alert alert-danger alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <%= alert %>
+            </div>
+          <% end %>
 
           <%= yield %>
 

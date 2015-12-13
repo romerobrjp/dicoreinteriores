@@ -1,0 +1,76 @@
+<!-- form start -->
+<%= simple_form_for([:admin, @user]) do |f| %>
+<%= f.error_notification %>
+<%= f.input :type, as: :hidden %>
+
+<div class="box-body">
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :name %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :surname %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :email %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :password, as: :password %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :cpf %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :phone1 %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :phone2 %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.input :street %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :street_number %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.input :street_complement %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :city %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :state %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :zip_code %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.input :avatar %>
+    </div>
+  </div>
+
+<div class="box-footer">
+  <%= f.submit class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', admin_users_path, class: 'btn btn-danger' %>
+</div>
+
+<% end %>
