@@ -8,19 +8,31 @@
 
 User.create!(
   name: 'Admin',
+  surname: 'Admin',
+  email: 'admin@admin.com',
+  cpf: '07644271481',
+  phone1: '996-447-337',
+  password: '1234Mudar', 
+  type: 'Admin'
+)
+
+User.create!(
+  name: 'Admin',
   surname: 'Teste',
   email: 'romero.mfm@gmail.com',
   cpf: '07644271481',
   phone1: '996-447-337',
   # password: BCrypt::Password.create('123123'),
-  password: '123123123', 
+  password: '123123123',
   type: 'Admin'
 )
 
-Category.create(
-  name: "Inspiração"
+Category.create!(
+  name: "Inspiração",
+  show_in_header: true
 )
 
-Category.create(
-  name: "Faça você mesmo"
+Category.create!(
+  name: "Faça você mesmo",
+  show_in_header: true
 )
