@@ -1,9 +1,9 @@
 <aside id="recent-posts-2" class="widget_recent_entries widget">
-    <h3 class="module-title title-widget"> <%= t("views.blog.popular_posts") %> </h3>
+    <h3 class="module-title title-widget"> <%= t("views.blog.populars") %> </h3>
 
     <ul>
-        <% @posts.last(5) do |post| %>
-            <li>
+        <% @populars.each do |post| %>
+            <li class="cat-item cat-item-14">
                 <%= link_to post.title, post %>
             </li>
         <% end %>
@@ -50,23 +50,5 @@
                 <%= link_to l(k.to_date, format: :month_year), by_month_path(k.to_date) %>
             </li>
         <% end %>
-    </ul>
-</aside>
-
-<aside id="meta-2" class="widget_meta widget">
-    <h3 class="module-title title-widget"><span>Meta</span></h3>
-    <ul>
-        <li>
-            <a href="#">Log in</a>
-        </li>
-        <li>
-            <a href="#">Entries <abbr title="Really Simple Syndication">RSS</abbr></a>
-        </li>
-        <li>
-            <a href="#">Comments <abbr title="Really Simple Syndication">RSS</abbr></a>
-        </li>
-        <li>
-            <a href="#" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a>
-        </li>
     </ul>
 </aside>

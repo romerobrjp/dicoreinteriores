@@ -1,7 +1,8 @@
 class BlogController < ApplicationController
   layout "blog"
+  impressionist :actions => [:show]
 
-  before_action :load_archives, :load_categories, only: [:index, :by_category, :by_month]
+  before_action :load_archives, :load_categories, :load_populars, only: [:index, :by_category, :by_month]
 
   def index    
     @posts = PostQuery.new.search.published_ordered.page(params.fetch(:page, 1))
@@ -9,6 +10,7 @@ class BlogController < ApplicationController
 
   def show
     @post = Post.find_by_id_and_draft!(params[:id], false)
+    impressionist(@post)
   end  
 
   def tag
@@ -34,5 +36,10 @@ class BlogController < ApplicationController
 
   def load_categories
     @categories = Category.all
+  end
+
+  def load_populars
+    impressions = Impression.select(:impressionable_id).where(impressionable_type: 'Post').group(:impressionable_id).order('count(impressionable_id) DESC').distinct.limit(5)
+    @populars = Post.where(:id => impressions)
   end
 end

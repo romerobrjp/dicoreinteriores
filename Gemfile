@@ -40,6 +40,7 @@ gem "paperclip", "~> 4.2"
 gem 'redcarpet'
 gem 'kaminari', "~> 0.16.3"
 gem 'puma'
+gem 'impressionist', "1.5.1"
 
 gem 'foreman', require: false
 

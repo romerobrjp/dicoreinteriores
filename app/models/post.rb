@@ -14,4 +14,6 @@ class Post < ActiveRecord::Base
   validates_associated :author
 
   paginates_per 10
+
+  is_impressionable
 end

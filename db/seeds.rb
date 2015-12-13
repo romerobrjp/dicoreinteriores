@@ -17,8 +17,10 @@ User.create!(
   type: 'Admin'
 )
 
-1.upto(5) do |n|
-  Category.create(
-    name: "Category #{n}"
-  )
-end
+Category.create(
+  name: "Inspiração"
+)
+
+Category.create(
+  name: "Faça você mesmo"
+)
