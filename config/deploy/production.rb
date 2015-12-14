@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server 'dicoreonline.dynu.com', user: 'dicoreonline', roles: %w{app db web}
+server '104.236.226.160', user: 'dicoreonline', roles: %w{app db web}
 set :ssh_options, {
     port: 42,
     forward_agent: false

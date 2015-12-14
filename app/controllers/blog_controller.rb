@@ -2,23 +2,23 @@ class BlogController < ApplicationController
   layout "blog"
   impressionist :actions => [:show]
 
-  before_action :load_archives, :load_categories, :load_populars, only: [:index, :by_category, :by_month]
+  before_action :load_archives, :load_categories, :load_populars, only: [:index, :by_category, :by_month, :show]
 
-  def index    
+  def index
     @posts = PostQuery.new.search.published_ordered.page(params.fetch(:page, 1))
   end
 
   def show
     @post = Post.find_by_id_and_draft!(params[:id], false)
     impressionist(@post)
-  end  
+  end
 
   def tag
     @posts = Post.tagged_with(params[:tag]).published_ordered.page(params.fetch(:page, 1))
     render 'index'
   end
 
-  def by_category    
+  def by_category
     @posts = Post.where(category: params[:category]).page(params.fetch(:page, 1))
     render 'index'
   end
@@ -30,7 +30,7 @@ class BlogController < ApplicationController
 
   private
 
-  def load_archives    
+  def load_archives
     @archives = PostQuery.new.search.archives
   end
 

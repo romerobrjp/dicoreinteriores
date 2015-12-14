@@ -6,7 +6,7 @@
 <div class="single_post">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-9">
         <% unless @post.main_image.nil? %>
           <div class="tzblog-img">
             <%= image_tag @post.main_image.url, class: 'img-responsive' %>
@@ -53,6 +53,9 @@
             <%= render 'shared/disqus' %>
           </div>
         </div>
+      </div>
+      <div class="col-md-3 tzsidebar-event">
+        <%= render 'right_section' %>
       </div>
     </div>
   </div>
