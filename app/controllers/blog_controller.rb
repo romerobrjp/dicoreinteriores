@@ -2,7 +2,7 @@ class BlogController < ApplicationController
   layout "blog"
   impressionist :actions => [:show]
 
-  before_action :load_archives, :load_categories, :load_populars, only: [:index, :by_category, :by_month, :show]
+  before_action :load_archives, :load_categories, :load_populars, only: [:index, :by_category, :by_month, :show, :tag]
 
   def index
     @posts = PostQuery.new.search.published_ordered.page(params.fetch(:page, 1))
@@ -14,7 +14,7 @@ class BlogController < ApplicationController
   end
 
   def tag
-    @posts = Post.tagged_with(params[:tag]).published_ordered.page(params.fetch(:page, 1))
+    @posts = Post.tagged_with(params[:tag]).where(draft: false).order(created_at: :desc).page(params.fetch(:page, 1))
     render 'index'
   end
 
