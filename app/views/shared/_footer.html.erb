@@ -5,38 +5,42 @@
       <div class="col-md-4 footerattr">
         <aside class="widget_contact_info widget" id="contact_info-2">
           <h3 class="module-title title-widget">
-            <span>LOCATION</span>
+            <span> <%= t('generic.get_in_touch') %> </span>
           </h3>
           <div class="tzwidget-contact">
-            <address>
-              London, UK, 10, Friks Avenue
-            </address>
             <span>
-              +0987 092 291 091
+              Vivian Mirelly, designer de interiores
             </span>
-            <span class="wemail">info@everline.com</span>
+
+            <span>
+              83 99999-9999
+            </span>
+
+            <span class="wemail">
+              dicoreonline@contato.com.br
+            </span>
           </div>
         </aside>
       </div>
       <div class="col-md-4 footerattr">
         <aside class="widget_widget_logo widget" id="widget_logo-2">
-          <div class="tz_logo_widget">
-            <a href="#">
-              <%= image_tag 'site/EverlineTheme.png' %>
-            </a>
-            <p>All right server. Copyright by TemPlaza.com</p>
+          <div class="tz_logo_widget">            
+            <%= link_to image_tag('logo.png', width: '150'), root_path %>            
+            <p>Copyright &copy; <%= Time.new.year %> <%= t('generic.app_name') %>. </p>
+            <p> <%= t('generic.copyright_msg') %> </p>
           </div>
         </aside>
       </div>
       <div class="col-md-4 footerattr">
         <aside class="widget_tz_social widget" id="tz_social-2">
           <h3 class="module-title title-widget">
-            <span>GET IN TOUCH</span>
+            <span> <%= t('generic.social_networks') %> </span>
           </h3>
           <div class="tz_social">
             <a class="fa fa-facebook" href="#"></a>
-            <a class="fa fa-google-plus" href="#"></a>
-            <a class="fa fa-twitter" href="#"></a>
+            <a class="fa fa-instagram" href="#"></a>
+            <!-- <a class="fa fa-google-plus" href="#"></a>
+            <a class="fa fa-twitter" href="#"></a> -->
             <a class="fa fa-youtube" href="#"></a>
           </div>
         </aside>
