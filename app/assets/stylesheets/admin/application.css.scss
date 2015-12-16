@@ -26,6 +26,8 @@ $fa-font-path: "font-awesome" !default;
 
 
 .admin-post-show-body {
+  text-align: justify;
+
   img {
     @include img-responsive;
   }
