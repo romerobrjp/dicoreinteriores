@@ -1,39 +1,41 @@
-<aside id="recent-posts-2" class="widget_recent_entries widget">
-    <h3 class="module-title title-widget"> <%= t("views.blog.populars") %> </h3>
+<aside id="recent-posts-2" class="widget_categories widget">
+  <h3 class="module-title title-widget right-section-header">
+    <%= t("views.blog.populars") %>
+  </h3>
 
-    <ul>
-        <% @populars.each do |post| %>
-            <li class="cat-item cat-item-14">
-                <%= link_to post.title, post %>
-            </li>
-        <% end %>
-    </ul>
+  <ul>
+    <% @populars.each do |post| %>
+      <li class="cat-item cat-item-14 right-section-item">
+          <%= link_to post.title, post %>
+      </li>
+    <% end %>
+  </ul>
 </aside>
 
-<aside class="widget_categories widget" id="categories-2">
-  <h3 class="module-title title-widget">
+<aside id="categories-2" class="widget_categories widget">
+  <h3 class="module-title title-widget right-section-header">
     <%= t("views.blog.categories") %>
   </h3>
 
   <ul>
     <% @categories.each do |categ| %>
-    <li class="cat-item cat-item-14">
-      <%= link_to categ.name, by_category_path(categ.name) %>
-    </li>
+      <li class="cat-item cat-item-14 right-section-item">
+        <%= link_to categ.name, by_category_path(categ.name) %>
+      </li>
     <% end %>
   </ul>
 </aside>
 
-<aside class="widget_archive widget" id="archives-2">
-  <h3 class="module-title title-widget">
+<aside id="archives-2" class="widget_archive widget">
+  <h3 class="module-title title-widget right-section-header">
     <%= t("views.blog.archives") %>
   </h3>
 
   <ul>
     <% @archives.each do |k,v| %>
-    <li class="cat-item cat-item-14">
-      <%= link_to l(k.to_date, format: :month_year), by_month_path(k.to_date) %>
-    </li>
+      <li class="cat-item cat-item-14 right-section-item">
+        <%= link_to l(k.to_date, format: :month_year), by_month_path(k.to_date) %>
+      </li>
     <% end %>
   </ul>
 </aside>
