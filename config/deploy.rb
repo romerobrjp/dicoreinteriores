@@ -17,7 +17,7 @@ set :deploy_to, "/home/dicoreonline/apps/dicoreonline"
 set :rbenv_type, :user
 set :rbenv_ruby, File.read('.ruby-version').strip
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-set :rbenv_path, "~/.rbenv"
+set :rbenv_path, "/usr/local/rbenv"
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_roles, :all
 
@@ -94,11 +94,11 @@ end
 namespace :foreman do
   set :foreman_application, "#{fetch(:application)}-#{fetch(:rails_env)}"
   set :user, 'dicoreonline'
-  desc "Export the Procfile to Ubuntu's upstart scripts"
+  desc "Exports the Procfile to Ubuntu's upstart scripts"
   task :export do
     on roles(:app) do |host|
       execute "cd #{current_path} && rm -f .env"
-      execute "cd #{current_path} && echo PATH=\"$HOME/.rbenv/shims:$PATH\" >> .env"
+      execute "cd #{current_path} && echo PATH=\"#{fetch(:rbenv_path)}/shims:$PATH\" >> .env"
       execute "cd #{current_path} && echo RAILS_ENV=#{fetch(:rails_env)} >> .env"
       execute "cd #{current_path} && echo RACK_ENV=#{fetch(:rails_env)} >> .env"
       within "#{current_path}" do
