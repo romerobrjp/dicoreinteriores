@@ -21,7 +21,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <%= link_to root_path, class: 'logo' do %>
+        <%= link_to :admin_posts, class: 'logo' do %>
           <span class="logo-mini"><b>DI</b>On</span>
           <span class="logo-lg"> <b> <%= t("generic.app_name") %> </b>
         <% end %>
@@ -138,42 +138,55 @@
         <section class="sidebar">
           <ul class="sidebar-menu">
             <li class="header"><%= t('views.admin.menu.title') %></li>
+
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pencil-square-o"></i>
                 <span><%= t('views.admin.menu.blog') %></span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
+
               <ul class="treeview-menu">
                 <li>
                   <%= link_to admin_posts_path do %>
                     <i class="fa fa-circle-o"></i> <%= t('activerecord.models.post.other') %>
                   <% end %>
                 </li>
+
                 <li>
                   <%= link_to new_admin_post_path do %>
                     <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.new_post') %>
                   <% end %>
                 </li>
+
                 <li>
                   <%= link_to admin_categories_path do %>
                     <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.categories') %>
                   <% end %>
                 </li>
+
+                <li>
+                  <%= link_to new_admin_category_path do %>
+                    <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.new_category') %>
+                  <% end %>
+                </li>
               </ul>
             </li>
+
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span><%= t('views.admin.menu.assets') %></span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
+
               <ul class="treeview-menu">
                 <li>
                   <%= link_to admin_assets_path do %>
                     <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.assets') %>
                   <% end %>
                 </li>
+
                 <li>
                   <%= link_to new_admin_asset_path do %>
                     <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.new_asset') %>
@@ -181,10 +194,27 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <%= link_to admin_users_path do %>
-                <i class="fa fa-users"></i> <span>Usuários</span>
-              <% end %>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-users"></i>
+                <span><%= t('activerecord.models.user.other') %></span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+
+              <ul class="treeview-menu">
+                <li>
+                  <%= link_to admin_users_path do %>
+                    <i class="fa fa-circle-o"></i> <span> <%= t('activerecord.models.user.other') %> </span>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to new_admin_user_path do %>
+                    <i class="fa fa-circle-o"></i> <%= t('views.admin.submenu.new_user') %>
+                  <% end %>
+                </li>
+              </ul>
             </li>
           </ul>
         </section>
@@ -222,7 +252,7 @@
         <div class="pull-right hidden-xs">
           <%= t('views.admin.title') %>
         </div>
-        <strong>Copyright &copy; <%= Time.new.year %> <a href="#"><%= t('generic.app_name') %></a>.</strong> <%= t('generic.copyright_msg') %>
+        <strong>Copyright &copy; <%= Time.new.year %> <%= link_to t('generic.app_name'), root_path %> </strong> <%= t('generic.copyright_msg') %>
       </footer>
 
       <aside class="control-sidebar control-sidebar-dark">
