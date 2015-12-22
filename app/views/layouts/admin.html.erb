@@ -116,7 +116,7 @@
 
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat"><%= t('views.admin.my_profile') %></a>
+                      <%= link_to t('views.admin.my_profile'), admin_user_path(current_user), class: 'btn btn-default btn-flat' %>
                     </div>
 
                     <div class="pull-right">
@@ -250,7 +250,7 @@
 
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <%= t('views.admin.title') %>
+          <%= "#{t('views.admin.title')}" %>
         </div>
         <strong>Copyright &copy; <%= Time.new.year %> <%= link_to t('generic.app_name'), root_path %> </strong> <%= t('generic.copyright_msg') %>
       </footer>

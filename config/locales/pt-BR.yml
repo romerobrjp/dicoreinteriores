@@ -140,8 +140,10 @@ pt-BR:
       users:
         title: 'Usuários do sistema'
         listing: 'Listando usuários'
-        show: 'Exibindo usuário'
+        show: 'Exibir usuário'
         all: 'Todos os usuários'
+        edit: 'Editar usuário'
+        destroy: 'Remover usuário'
     app:
       auth:
         hello_guest: 'Olá, visitante'

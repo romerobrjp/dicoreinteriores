@@ -4,7 +4,6 @@
 <%= f.input :type, as: :hidden %>
 
 <div class="box-body">
-
   <div class="row">
     <div class="col-md-6">
       <%= f.input :name %>
@@ -70,7 +69,7 @@
 
 <div class="box-footer">
   <%= f.submit class: 'btn btn-primary' %>
-  <%= link_to 'Cancel', admin_users_path, class: 'btn btn-danger' %>
+  <%= link_to t('generic.cancel'), admin_users_path, class: 'btn btn-danger' %>
 </div>
 
 <% end %>
