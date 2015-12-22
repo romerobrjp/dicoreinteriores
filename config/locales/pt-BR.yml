@@ -104,6 +104,13 @@ pt-BR:
         success: 'Postagem removida com sucesso'
       update:
         success: 'Postagem atualizada com sucesso'
+    users:
+      create:
+        success: 'Usuário criado com sucesso'
+      destroy:
+        success: 'Usuário removido com sucesso'
+      update:
+        success: 'Usuário atualizado com sucesso'
   views:
     admin:
       draft: 'Rascunho'
