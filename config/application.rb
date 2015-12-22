@@ -25,5 +25,8 @@ module Dicore
 
     config.assets.initialize_on_precompile = false
     #RAILS_ENV=production bundle exec rake assets:precompile
+
+    config.app_version = "0.0.1"
+    config.admin_panel_version = "0.0.1"
   end
 end

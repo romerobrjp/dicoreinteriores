@@ -250,7 +250,7 @@
 
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <%= "#{t('views.admin.title')}" %>
+          <%= "#{t('views.admin.title')} - v#{Rails.application.config.admin_panel_version}" %>
         </div>
         <strong>Copyright &copy; <%= Time.new.year %> <%= link_to t('generic.app_name'), root_path %> </strong> <%= t('generic.copyright_msg') %>
       </footer>
