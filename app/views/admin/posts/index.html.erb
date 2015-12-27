@@ -2,7 +2,9 @@
 <div class="box box-primary">
   <div class="box-header with-border">
     <h3 class="box-title"> <%= t('activerecord.models.post.other') %> </h3>
-    <%= link_to t('views.admin.new_post'), new_admin_post_path, class: 'btn btn-primary pull-right' %>
+    <div class="box-tools pull-right">
+      <%= link_to t('views.admin.new_post'), new_admin_post_path, class: 'btn btn-sm btn-primary' %>
+    </div>
   </div>
 
   <div class="box-body">
