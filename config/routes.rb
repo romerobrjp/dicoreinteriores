@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # devise_for :users
 
   namespace :admin do
-    get '/', to: redirect('/posts')
+    get '/', to: redirect('/admin/posts')
     resources :posts
     resources :categories, except: [:show]
     resources :assets
