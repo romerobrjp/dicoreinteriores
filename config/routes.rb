@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   get '/blog/:id' => 'blog#show', as: 'post'
   get '/blog/tag/:tag' => 'blog#tag', as: 'tag'
   get '/blog/posts/category/:category' => 'blog#by_category', as: 'by_category'
-  get '/blog/posts/month/:month' => 'blog#by_month', as: 'by_month'
+  get '/blog/posts/month/:month' => 'blog#by_month', as: 'by_month'  
 
   # devise_for :users
 
   namespace :admin do
     get '/', to: redirect('/posts')
+    get '/config' => 'admin#prepare_config'
     resources :posts
     resources :categories, except: [:show]
     resources :assets

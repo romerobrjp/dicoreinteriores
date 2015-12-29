@@ -6,4 +6,8 @@ class Admin::AdminController < ApplicationController
   def current_admin
     current_user
   end
+
+  def prepare_config
+
+  end
 end
