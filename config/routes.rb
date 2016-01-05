@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :preferences
+  end
   root 'home#index'
 
   get '/blog' => 'blog#index'
@@ -11,13 +14,13 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/', to: redirect('/posts')
-    get '/config' => 'admin#prepare_config'
     resources :posts
     resources :categories, except: [:show]
     resources :assets
     resources :users
     resources :admins, controller: 'users', only: [:create, :update, :new, :edit], type: 'admin'
     resources :customers, controller: 'users', only: [:create, :update, :new, :edit], type: 'customer'
+    resources :configurations, except: [:index]
   end
 
   devise_for :users, controllers: {
