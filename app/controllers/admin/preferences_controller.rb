@@ -1,10 +1,10 @@
 class Admin::PreferencesController < Admin::AdminController
-  before_action :set_admin_preference, only: [:show, :edit, :update, :destroy]
+  before_action :set_preference, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/preferences
   # GET /admin/preferences.json
   def index
-    @admin_preferences = Preference.all
+    @preferences = Preference.all
   end
 
   # GET /admin/preferences/1
@@ -14,7 +14,7 @@ class Admin::PreferencesController < Admin::AdminController
 
   # GET /admin/preferences/new
   def new
-    @admin_preference = Preference.new
+    @preference = Preference.new
   end
 
   # GET /admin/preferences/1/edit
@@ -24,15 +24,15 @@ class Admin::PreferencesController < Admin::AdminController
   # POST /admin/preferences
   # POST /admin/preferences.json
   def create
-    @admin_preference = Preference.new(admin_preference_params)
+    @preference = Preference.new(preference_params)
 
     respond_to do |format|
-      if @admin_preference.save
-        format.html { redirect_to @admin_preference, notice: 'Preference was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_preference }
+      if @preference.save
+        format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
+        format.json { render :show, status: :created, location: @preference }
       else
         format.html { render :new }
-        format.json { render json: @admin_preference.errors, status: :unprocessable_entity }
+        format.json { render json: @preference.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,12 +41,12 @@ class Admin::PreferencesController < Admin::AdminController
   # PATCH/PUT /admin/preferences/1.json
   def update
     respond_to do |format|
-      if @admin_preference.update(admin_preference_params)
-        format.html { redirect_to @admin_preference, notice: 'Preference was successfully updated.' }
-        format.json { render :show, status: :ok, location: @admin_preference }
+      if @preference.update(preference_params)
+        format.html { redirect_to @preference, notice: 'Preference was successfully updated.' }
+        format.json { render :show, status: :ok, location: @preference }
       else
         format.html { render :edit }
-        format.json { render json: @admin_preference.errors, status: :unprocessable_entity }
+        format.json { render json: @preference.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,21 +54,21 @@ class Admin::PreferencesController < Admin::AdminController
   # DELETE /admin/preferences/1
   # DELETE /admin/preferences/1.json
   def destroy
-    @admin_preference.destroy
+    @preference.destroy
     respond_to do |format|
-      format.html { redirect_to admin_preferences_url, notice: 'Preference was successfully destroyed.' }
+      format.html { redirect_to preferences_url, notice: 'Preference was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_admin_preference
-      @admin_preference = Preference.find(params[:id])
+    def set_preference
+      @preference = Preference.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_preference_params
-      params.require(:admin_preference).permit(:color_1, :color_2, :color_3, :color_4, :color_5, :user_id)
+    def preference_params
+      params.require(:preference).permit(:color_1, :color_2, :color_3, :color_4, :color_5, :user_id)
     end
 end

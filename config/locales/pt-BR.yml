@@ -61,6 +61,12 @@ pt-BR:
         introduction: 'Introdução'
         tag_list: 'Tags (Separadas por vírgula)'
         title: 'Título'
+      preference:
+        color_1: 'Cor principal'
+        color_2: 'Cor 2'
+        color_3: 'Cor 3'
+        color_4: 'Cor 4'
+        color_5: 'Cor 5'
       user:
         name: Nome
         surname: Sobrenome
@@ -79,15 +85,18 @@ pt-BR:
       asset:
         one: 'Arquivo'
         other: 'Arquivos'
-      user:
-        one: 'Usuário'
-        other: 'Usuários'
-      post:
-        one: 'Postagem'
-        other: 'Postagens'
       category:
         one: 'Categoria'
         other: 'Categorias'
+      post:
+        one: 'Postagem'
+        other: 'Postagens'
+      preference:
+        one: 'Preferência'
+        other: 'Preferências'
+      user:
+        one: 'Usuário'
+        other: 'Usuários'
   controllers:
     app:
     assets:
@@ -119,6 +128,10 @@ pt-BR:
         blog: 'Blog'
         preferences: 'Preferências'
         title: 'Menu'
+      preferences:
+        color_scheme: 'Esquema de cores'
+        edit: 'Editar preferências'
+        title: 'Preferências'
       submenu:
         assets: 'Arquivos'
         categories: 'Categorias'
@@ -132,7 +145,7 @@ pt-BR:
       new_asset: 'Novo arquivo'
       new_post: 'Nova postagem'
       new_admin: 'Novo admin'
-      new_customer: 'Novo cliente'
+      new_customer: 'Novo cliente'       
       published: 'Publicado'
       published_at: 'Publicado em'
       recent_activities: 'Atividades recentes'

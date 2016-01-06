@@ -1,3 +1,3 @@
 class Admin < User
-  has_one :configuration
+  has_one :preference
 end
