@@ -1,0 +1,47 @@
+<% content_for :page_header, 'Preferências' %>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <div class="btn-group btn-group pull-right" role="group">
+      <%= link_to t('views.admin.preferences.edit'), edit_admin_preference_path(@preference), class: 'btn btn-primary btn btn-danger' %>
+    </div>
+  </div>
+
+  <div class="box-header with-border">
+    <h3> <%= t('views.admin.preferences.color_scheme') %> </h1>
+  </div>
+
+  <div class="box-body">
+    <div class="row">
+      <div class="col-md-2">
+        <h4> <%= t('activerecord.attributes.preference.color_1') %> </h4>
+        <h4> <%= @preference.color_1 %> </h4>
+        <div class="colorpicker-sample-box" style="background-color: <%= @preference.color_1 %>"> </div>
+      </div>
+
+      <div class="col-md-2">
+        <h4> <%= t('activerecord.attributes.preference.color_2') %> </h4>
+        <h4> <%= @preference.color_2 %> </h4>
+        <div class="colorpicker-sample-box" style="background-color: <%= @preference.color_2 %>"> </div>
+      </div>
+
+      <div class="col-md-2">
+        <h4> <%= t('activerecord.attributes.preference.color_3') %> </h4>
+        <h4> <%= @preference.color_3 %> </h4>
+        <div class="colorpicker-sample-box" style="background-color: <%= @preference.color_3 %>"> </div>
+      </div>
+<!--
+      <div class="col-md-2">
+        <h4> <%= t('activerecord.attributes.preference.color_4') %> </h4>
+        <h4> <%= @preference.color_4 %> </h4>
+        <div class="colorpicker-sample-box" style="background-color: <%= @preference.color_4 %>"> </div>
+      </div>
+
+      <div class="col-md-2">
+        <h4> <%= t('activerecord.attributes.preference.color_5') %> </h4>
+        <h4> <%= @preference.color_5 %> </h4>
+        <div class="colorpicker-sample-box" style="background-color: <%= @preference.color_5 %>"> </div>
+      </div>
+-->
+    </div>
+  </div>
+</div>

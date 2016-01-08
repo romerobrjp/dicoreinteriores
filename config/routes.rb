@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'stylesheets/theme', as: 'theme_css'
+
   root 'home#index'
 
   get '/blog' => 'blog#index'
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
     resources :users
     resources :admins, controller: 'users', only: [:create, :update, :new, :edit], type: 'admin'
     resources :customers, controller: 'users', only: [:create, :update, :new, :edit], type: 'customer'
+    resources :configurations, except: [:index]
+    resources :preferences
   end
 
   devise_for :users, controllers: {

@@ -9,10 +9,11 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    
+
     <title><%= t('generic.app_name') %></title>
-    
+
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel='stylesheet' href='<%= theme_css_path %>' type='text/css' media='all' />
     <%= csrf_meta_tags %>
 
     <script type="text/javascript">
