@@ -146,9 +146,6 @@ body.themecolorCustom .tp-caption.tzcharacters
 {
     color: <%= @preference.color_2 %> !important;
 }
-.themecolorCustom a {
-    color: <%= @preference.color_2 %>;
-}
 .themecolorCustom .tznav-3,
 .themecolorCustom .tzform-search #searchsubmit,
 .themecolorCustom .jp-playlist ul li.jp-playlist-current:before,
