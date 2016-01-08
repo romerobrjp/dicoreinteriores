@@ -36,3 +36,13 @@ Category.create!(
   name: "Faça você mesmo",
   show_on_header: true
 )
+
+Preference.create!(
+  specific_id: 'global_prefs',
+  color_1: "#adc1da",
+  color_2: "#bfcfe2",
+  color_3: "#cedae9",
+  color_4: "#d5dfec",
+  color_5: "#d6e0ed",
+  user_id: nil,
+)

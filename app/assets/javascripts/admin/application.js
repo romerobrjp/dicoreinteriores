@@ -16,7 +16,15 @@
 //= require markdown
 //= require bootstrap-markdown
 //= require admin/app
+//= require colorpicker/bootstrap-colorpicker
 //= require clipboard
 //= require_tree .
 
 new Clipboard('.clipboard-btn');
+
+$(function () {
+  //Colorpicker
+  $(".my-colorpicker1").colorpicker();
+  //color picker with addon
+  $(".my-colorpicker2").colorpicker();
+})

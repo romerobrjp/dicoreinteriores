@@ -1,0 +1,43 @@
+<% content_for :page_header, 'Preferências' %>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Preferências</h3>
+    <div class="box-tools pull-right">
+      <div class="btn-group btn-group-sm">
+        <%= link_to t('views.admin.submenu.new_preference'), new_admin_preference_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th><%= t('activerecord.attributes.preference.color_1') %></th>
+          <th><%= t('activerecord.attributes.preference.color_2') %></th>
+          <th><%= t('activerecord.attributes.preference.color_3') %></th>
+          <th><%= t('activerecord.attributes.preference.color_4') %></th>
+          <th><%= t('activerecord.attributes.preference.color_5') %></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @categories.each do |preference| %>
+        <tr>
+          <td><%= preference %></td>
+          <td>
+            <div class="btn-group btn-group-xs" role="group">
+              <%= link_to edit_admin_preference_path(preference), class: 'btn btn-warning' do %>
+              <i class="fa fa-pencil"></i><% end %>
+              <%= link_to admin_preference_path(preference), method: :delete, data: { confirm: t('generic.are_you_sure') }, class: 'btn btn-danger' do %>
+              <i class="fa fa-trash"></i><% end %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
