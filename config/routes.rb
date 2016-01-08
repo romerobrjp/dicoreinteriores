@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    resources :preferences
-  end
+  get 'stylesheets/theme', as: 'theme_css'
+
   root 'home#index'
 
   get '/blog' => 'blog#index'
   get '/blog/:id' => 'blog#show', as: 'post'
   get '/blog/tag/:tag' => 'blog#tag', as: 'tag'
   get '/blog/posts/category/:category' => 'blog#by_category', as: 'by_category'
-  get '/blog/posts/month/:month' => 'blog#by_month', as: 'by_month'  
+  get '/blog/posts/month/:month' => 'blog#by_month', as: 'by_month'
 
   # devise_for :users
 
@@ -21,6 +20,7 @@ Rails.application.routes.draw do
     resources :admins, controller: 'users', only: [:create, :update, :new, :edit], type: 'admin'
     resources :customers, controller: 'users', only: [:create, :update, :new, :edit], type: 'customer'
     resources :configurations, except: [:index]
+    resources :preferences
   end
 
   devise_for :users, controllers: {

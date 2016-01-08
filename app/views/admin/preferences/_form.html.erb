@@ -13,8 +13,8 @@
 
       <div class="col-md-2 form-group">
         <%= f.label t('activerecord.attributes.preference.color_2') %>
-        <div class="input-group my-colorpicker2">          
-          <%= f.text_field :color_2, class: 'form-control' %>          
+        <div class="input-group my-colorpicker2">
+          <%= f.text_field :color_2, class: 'form-control' %>
           <div class="input-group-addon">
             <i></i>
           </div>
@@ -23,17 +23,17 @@
 
       <div class="col-md-2 form-group">
         <%= f.label t('activerecord.attributes.preference.color_3') %>
-        <div class="input-group my-colorpicker2">          
-          <%= f.text_field :color_3, class: 'form-control' %>          
+        <div class="input-group my-colorpicker2">
+          <%= f.text_field :color_3, class: 'form-control' %>
           <div class="input-group-addon">
             <i></i>
           </div>
         </div>
       </div>
-
+<!--
       <div class="col-md-2 form-group">
         <%= f.label t('activerecord.attributes.preference.color_4') %>
-        <div class="input-group my-colorpicker2">          
+        <div class="input-group my-colorpicker2">
           <%= f.text_field :color_4, class: 'form-control' %>
           <div class="input-group-addon">
             <i></i>
@@ -43,15 +43,16 @@
 
       <div class="col-md-2 form-group">
         <%= f.label t('activerecord.attributes.preference.color_5') %>
-        <div class="input-group my-colorpicker2">          
-          <%= f.text_field :color_5, class: 'form-control' %>          
+        <div class="input-group my-colorpicker2">
+          <%= f.text_field :color_5, class: 'form-control' %>
           <div class="input-group-addon">
             <i></i>
           </div>
         </div>
       </div>
-    </div>
+    -->
 
+    </div>
     <div class="box-footer">
       <%= f.submit class: 'btn btn-primary' %>
       <%= link_to t('generic.cancel'), admin_preference_path(current_user), class: 'btn btn-danger' %>

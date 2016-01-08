@@ -1,0 +1,188 @@
+/**
+ * 6.1 - Color Custom
+ * -----------------------------------------------------------------------------
+ */
+.themecolorCustom .everline_title:after,
+.themecolorCustom .content-top,
+.themecolorCustom .tz-header-page,
+.themecolorCustom .tzform-search #searchsubmit,
+.themecolorCustom .tz-header ul li .non_mega_menu li:after,
+.themecolorCustom .tzcountdown,
+.themecolorCustom .tzcountdown2,
+.themecolorCustom .tzcountdown3,
+.themecolorCustom .tzcount-left,
+.themecolorCustom .tzcountdown4 .countdown,
+.themecolorCustom .title_ourstory:after,
+.themecolorCustom .tzintroduct h3:after,
+.themecolorCustom .form7-wrap,
+.themecolorCustom .form7-style2,
+.themecolorCustom .form7-style3,
+.themecolorCustom .tzautoplay,
+.themecolorCustom .tzpause,
+.themecolorCustom .elementblog-title:after,
+.themecolorCustom .playlist_title:after,
+.themecolorCustom .jp-play-bar,
+.themecolorCustom .tzshop_title h1:after,
+.themecolorCustom.woocommerce .tzproduct-item:hover .tzmeta-item a:hover,
+.themecolorCustom.woocommerce .tzproduct-item:hover .tzmeta-item span:hover,
+.themecolorCustom.woocommerce div.product .tz-entry-summary form.cart .button,
+.themecolorCustom.woocommerce div.product .tz-entry-summary p.cart .single_add_to_cart_button,
+.themecolorCustom.woocommerce .woocommerce-message .wc-forward:hover,
+.themecolorCustom.woocommerce #review_form #respond input#submit:hover,
+.themecolorCustom.woocommerce-cart .woocommerce .shop_table .button,
+.themecolorCustom.woocommerce .return-to-shop .button,
+.themecolorCustom.woocommerce-cart .woocommerce .shop_table .checkout-button:hover,
+.themecolorCustom.woocommerce-cart .woocommerce .shop_table .button:hover,
+.themecolorCustom .cart-collaterals h2:after,
+.themecolorCustom.woocommerce .cart-collaterals .shipping_calculator .button,
+.themecolorCustom.woocommerce-page .cart-collaterals .shipping_calculator .button,
+.themecolorCustom.woocommerce form.checkout_coupon p input.button:hover,
+.themecolorCustom.woocommerce-page form.checkout_coupon p input.hover,
+.themecolorCustom.woocommerce-checkout  .woocommerce-info:before,
+.themecolorCustom.woocommerce-checkout  .woocommerce-info:before,
+.themecolorCustom .woocommerce-billing-fields h3:before,
+.themecolorCustom #order_review_heading:before,
+.themecolorCustom .woocommerce-shipping-fields h3 label:before,
+.themecolorCustom.woocommerce #payment #place_order:hover,
+.themecolorCustom.woocommerce-page #payment #place_order:hover,
+.themecolorCustom.woocommerce-checkout .woocommerce h2:before,
+.themecolorCustom.woocommerce-account .woocommerce h2:before,
+.themecolorCustom.woocommerce table.my_account_orders .order-actions .button:hover,
+.themecolorCustom.woocommerce-page table.my_account_orders .order-actions .button:hover,
+.themecolorCustom.woocommerce-account .woocommerce input.button:hover,
+.themecolorCustom.woocommerce-account .woocommerce-page input.button:hover,
+.themecolorCustom .tzsidebar_shop .module-title:after,
+.themecolorCustom.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.themecolorCustom.woocommerce-page .widget_price_filter .ui-slider .ui-slider-range,
+.themecolorCustom .tzdefault_title h1:after,
+.themecolorCustom .datepicker table tr td span.active.active,
+.themecolorCustom .datepicker table tr td.active.active ,
+.themecolorCustom .datepicker table tr td.day:hover,
+.themecolorCustom .datepicker table tr td.day.focused,
+.themecolorCustom #tribe-bar-form .tribe-bar-submit input[type="submit"],
+.themecolorCustom h2.tribe-events-page-title:after,
+.themecolorCustom #tribe-events .tribe-events-button, #tribe-events .tribe-events-button:hover,
+.themecolorCustom #tribe_events_filters_wrapper input[type="submit"],
+.themecolorCustom .tribe-events-button,
+.themecolorCustom .tribe-events-button.tribe-active:hover,
+.themecolorCustom .tribe-events-button.tribe-inactive,
+.themecolorCustom .tribe-events-button:hover,
+.themecolorCustom .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"],
+.themecolorCustom .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"] > a,
+.themecolorCustom.single-tribe_events .tribe-events-event-meta,
+.themecolorCustom .tztribe_nav .wp-pagenavi a:hover,
+.themecolorCustom .tztribe_nav .wp-pagenavi span.current,
+.themecolorCustom .widget_nav_menu ul li a:hover,
+.themecolorCustom .tz_slider_prev:hover,
+.themecolorCustom .tz_slider_next:hover,
+.themecolorCustom .tzquote,
+.themecolorCustom .tzpagination2 a:hover,
+.themecolorCustom .tzpagination2 span.current,
+.themecolorCustom .tzpagenavi-blog .wp-pagenavi a:hover,
+.themecolorCustom .tzpagenavi-blog .wp-pagenavi span.current,
+.themecolorCustom .tztitle:after,
+.themecolorCustom .portfolio-item:before,
+.themecolorCustom .tzportfolio-style2 .portfolio-padding:before,
+.themecolorCustom .meta-social a i:hover,
+.themecolorCustom .team_title:after,
+.themecolorCustom .tzphone i,
+.themecolorCustom .tzaddress i,
+.themecolorCustom .tzemail i,
+.themecolorCustom .wpcf7-submit,
+.themecolorCustom .tz-footer,
+.themecolorCustom .tz-header1 .tzlogo a,
+.themecolorCustom .tz-header2 .tzlogo a,
+.themecolorCustom .blog-post.sticky .everline_sticky,
+.themecolorCustom .live_title,
+.themecolorCustom .live-content ul.livebox li:hover,
+.themecolorCustom .live-content ul.livebox li.lactive,
+.themecolorCustom .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.themecolorCustom .tzsidebar-event aside .module-title
+{
+    background: <%= @preference.color_1 %> !important;
+}
+.themecolorCustom .tz-header ul li .non_mega_menu  li a:hover,
+.themecolorCustom .tzcountdown-ds2 span,
+.themecolorCustom .ourstory_infomation p,
+.themecolorCustom .jp-controls button:hover i,
+.themecolorCustom .jp-playlist ul li.jp-playlist-current:before,
+.themecolorCustom .jp-playlist ul li:hover:before,
+.themecolorCustom .testimonials2 .icon_testimonials,
+.themecolorCustom .testimonials2 .author_testimonials,
+.themecolorCustom .tzimg-content strong,
+.themecolorCustom .tz-entry-summary  .in-stock,
+.themecolorCustom.woocommerce table.cart a.remove:hover,
+.themecolorCustom.woocommerce #content table.cart a.remove:hover,
+.themecolorCustom.woocommerce-page table.cart a.remove:hover,
+.themecolorCustom.woocommerce-page #content table.cart a.remove:hover,
+.themecolorCustom .order-total strong span,
+.themecolorCustom.woocommerce-checkout  .woocommerce-info a,
+.themecolorCustom .tribe-events-nav-next a:hover,
+.themecolorCustom .tribe-events-nav-previous a:hover,
+.themecolorCustom .tribe-events-read-more,
+.themecolorCustom.single-tribe_events #tribe-events-content .updated,
+.themecolorCustom.single-tribe_events #tribe-events-content .updated span,
+.themecolorCustom .tztribe_item a.tzevent-readmore,
+.themecolorCustom .tribe-events-list-widget .tribe-events-widget-link a,
+.themecolorCustom .blog_meta span:hover,
+.themecolorCustom .blog_meta a:hover,
+.themecolorCustom .more-link,
+.themecolorCustom blockquote:before,
+.themecolorCustom .single-share a:hover,
+.themecolorCustom .comment-content .comment-metadata a,
+.themecolorCustom .masonry-left h3 a:hover,
+.themecolorCustom .masonry-left i:hover,
+.themecolorCustom .masonry-right span,
+.themecolorCustom .masonry-right span a,
+.themecolorCustom .tzPortfolio_meta span,
+.themecolorCustom .tzPortfolio_meta a,
+.themecolorCustom .tzmeta-single span,
+.themecolorCustom .tzmeta-single span a,
+.themecolorCustom .team_readmore i,
+.themecolorCustom .comingsoo_ds a,
+.themecolorCustom .blog-item .tzblog_readmore,
+body.themecolorCustom header ul.nav-collapse .themeple_custom_menu_mega_menu ul li ul li a:hover,
+body.themecolorCustom .tp-caption.tzcharacters
+{
+    color: <%= @preference.color_2 %> !important;
+}
+.themecolorCustom a {
+    color: <%= @preference.color_2 %>;
+}
+.themecolorCustom .tznav-3,
+.themecolorCustom .tzform-search #searchsubmit,
+.themecolorCustom .jp-playlist ul li.jp-playlist-current:before,
+.themecolorCustom .jp-playlist ul li:hover:before,
+.themecolorCustom.woocommerce-checkout .woocommerce .woocommerce-info,
+.themecolorCustom.woocommerce-checkout .woocommerce-info,
+.themecolorCustom .tz-header2,
+.themecolorCustom .livebox li
+{
+    border-color: <%= @preference.color_1 %>;
+}
+.themecolorCustom header.headerAnimate,
+body.themecolorCustom.theme-box .everline_boxed header.headerAnimate .wrapbox {
+    background: <%= @preference.color_1 %>;
+}
+.themecolorCustom .tz_social a,
+.themecolorCustom .tz_social a:hover{
+    border-color: <%= @preference.color_3 %>;
+}
+.themecolorCustom .tz_social a:hover{
+    background: <%= @preference.color_3 %>;
+}
+.themecolorCustom .tzcountdownitem{
+    border-color: <%= @preference.color_3 %>;
+}
+.themecolorCustom .tzcountdownitem:hover{
+    border-color: <%= @preference.color_3 %>;
+    background: <%= @preference.color_3 %>;
+}
+
+.themecolorCustom .tz-menu a,
+.themecolorCustom .tz-footer span,
+.themecolorCustom .tz-footer .fa,
+.themecolorCustom .tz-footer p,
+.tzsidebar-event aside .module-title {
+  color: <%= @preference.color_2 %> !important;
+}
