@@ -4,7 +4,7 @@
     <h3 class="box-title">Exibindo Postagem</h3>
     <div class="box-tools pull-right">
       <div class="btn-group btn-group-sm" role="group">
-        <%= link_to 'Edit Post', edit_admin_post_path(@post), class: 'btn btn-primary' %>
+        <%= link_to t('generic.edit'), edit_admin_post_path(@post), class: 'btn btn-primary' %>
         <%= link_to 'Delete Post', admin_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       </div>
     </div>
