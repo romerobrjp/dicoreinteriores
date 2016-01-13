@@ -25,11 +25,11 @@ class Admin::PostsController < Admin::AdminController
   # POST /admin/posts.json
   def create
     @post = Post.new(admin_post_params)
-    @post.author = current_admin
+    @post.author = current_user
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to [:admin, @post], notice: t('controllers.assets.create.success') }
+        format.html { redirect_to [:admin, @post], notice: t('controllers.posts.create.success') }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -41,10 +41,10 @@ class Admin::PostsController < Admin::AdminController
   # PATCH/PUT /admin/posts/1
   # PATCH/PUT /admin/posts/1.json
   def update
-    @post.author = current_admin
+    @post.author = current_user
     respond_to do |format|
       if @post.update(admin_post_params)
-        format.html { redirect_to [:admin, @post], notice: t('controllers.assets.update.success') }
+        format.html { redirect_to [:admin, @post], notice: t('controllers.posts.update.success') }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class Admin::PostsController < Admin::AdminController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to admin_posts_url, notice: t('controllers.assets.destroy.success') }
+      format.html { redirect_to admin_posts_url, notice: t('controllers.posts.destroy.success') }
       format.json { head :no_content }
     end
   end

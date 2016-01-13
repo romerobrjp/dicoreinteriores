@@ -2,7 +2,9 @@
 <div class="box box-primary">
   <div class="box-header with-border">
     <h3 class="box-title"><%= t('views.admin.menu.assets') %></h3>
-    <%= link_to t('views.admin.new_asset'), new_admin_asset_path, class: 'btn btn-primary pull-right' %>
+    <div class="box-tools pull-right">
+      <%= link_to t('views.admin.new_asset'), new_admin_asset_path, class: 'btn btn-sm btn-primary' %>
+    </div>
   </div>
 
   <div class="box-body">

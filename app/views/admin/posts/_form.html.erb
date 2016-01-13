@@ -5,12 +5,22 @@
   <div class="box-body">
 
     <div class="row">
-      <div class="col-md-8">
-        <%= f.input :title %>
-      </div>
+      <div class="col-md-12">
 
-      <div class="col-md-2">
-        <%= f.input :draft %>
+        <div class="onoffswitch">
+          <%= f.check_box :draft, class: 'onoffswitch-checkbox' %>
+          <label class="onoffswitch-label" for="post_draft">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10">
+        <%= f.input :title %>
       </div>
 
       <div class="col-md-2">
