@@ -1,0 +1,62 @@
+<div class="tzdefault_title">
+  <div class="container">
+    <h1>Blog - <%= @post.title %></h1>
+  </div>
+</div>
+<div class="single_post">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <% unless @post.main_image.nil? %>
+          <div class="tzblog-img">
+            <%= image_tag @post.main_image.url, class: 'img-responsive' %>
+          </div>
+        <% end %>
+        <h2 class="single-title"><%= @post.introduction %></h2>
+        <span class="single-meta">
+          <%= l @post.created_at %>
+        </span>
+        <div class="single-content blog-content">
+          <%= markdown(@post.body) %>
+        </div>
+        <div class="single-tags">
+          <div class="meta-tags pull-left">
+            Tags:
+            <% @post.tags.each do |tag| %>
+              <%= link_to tag.name, tag_path(tag.name) %>
+            <% end %>
+          </div>
+          <div class="single-share pull-right">
+            <span>Share it:</span>
+            <a class="tz_social" href="javascript: void(0)" id="fb-share" onclick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<%= @post.title %>&amp;p[url]=<%= request.original_url %>','sharer','toolbar=0,status=0,width=580,height=325');">
+              <i class="fa fa-facebook"></i>
+            </a>
+
+            <a class="tz_social" href="javascript: void(0)" id="tw-share" onclick="window.open('http://twitter.com/share?text=<%= @post.title %>&amp;url=<%= request.original_url %>','sharer','toolbar=0,status=0,width=580,height=325');">
+              <i class="fa fa-twitter"></i>
+            </a>
+
+            <a class="tz_social" href="javascript: void(0)" id="p-share" onclick="window.open('http://pinterest.com/pin/create/button/?url=<%= request.original_url %>;description=<%= @post.title %>','sharer','toolbar=0,status=0,width=580,height=325');">
+              <i class="fa fa-pinterest"></i>
+            </a>
+          </div>
+        </div>
+        <div class="single-author">
+          <%= image_tag @post.author.avatar(:smaller), class: 'avatar avatar-100 photo' %>
+          <span class="author-ds">
+            <a class="single-author-name"><%= @post.author.full_name %></a>
+            <a class="single-author-name"><%= @post.author.email %></a>
+          </span>
+        </div>
+        <div class="tzcomments-area">
+          <div class="comments-area" id="comments">
+            <%= render 'shared/disqus' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 tzsidebar-event">
+        <%= render 'right_section' %>
+      </div>
+    </div>
+  </div>
+</div>

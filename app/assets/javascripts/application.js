@@ -12,5 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require bootstrap
+//= require site/jquery.parallax-1.1.3
+//= require site/owl.carousel
+//= require site/jquery.flexslider
+//= require site/off-canvas
+//= require site/jquery.isotope.min
+//= require site/custom-portfolio
+//= require site/revslider/jquery.themepunch.tools.min.js
+//= require site/revslider/jquery.themepunch.revolution.min
+//= require site/custom
+//= require_self

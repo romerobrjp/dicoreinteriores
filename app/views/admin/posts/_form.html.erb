@@ -1,0 +1,57 @@
+  <!-- form start -->
+<%= simple_form_for([:admin, @post]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="box-body">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="onoffswitch">
+          <%= f.check_box :draft, class: 'onoffswitch-checkbox' %>
+          <label class="onoffswitch-label" for="post_draft">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10">
+        <%= f.input :title %>
+      </div>
+
+      <div class="col-md-2">
+        <%= f.association :category %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :introduction %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :main_image %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :tag_list, input_html: {value: @post.tag_list.to_s}, label: "#{t('views.admin.tag_list')} (#{t('views.admin.tag_list_obs')})" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :body, input_html: { 'data-provide': 'markdown' } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-footer">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to t('generic.cancel'), admin_posts_path, class: 'btn btn-danger' %>
+  </div>
+<% end %>

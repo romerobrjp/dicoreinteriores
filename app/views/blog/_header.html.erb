@@ -1,0 +1,14 @@
+<header class="tz-header tz-header-page">
+    <div class="container">
+        <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
+            <i class="fa fa-bars"></i>
+        </button>
+        <h3 class="tzlogo pull-left">
+            <%= link_to root_path, title: t('generic.app_name') do %>
+                <%= image_tag 'logo.png', height: '100', class: 'logo_lager' %>
+            <% end %>
+        </h3>
+
+        <%= render 'blog/header_menu' %>
+    </div>
+</header>

@@ -1,0 +1,27 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="<%= t('generic.app_name') %>" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <title><%= t('generic.app_name') %></title>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel='stylesheet' href='<%= theme_css_path %>' type='text/css' media='all' />
+    <%= csrf_meta_tags %>
+
+    <script type="text/javascript">
+        var themeprefix = 'plazart';
+        var imgpath = 'images/';
+    </script>
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="vc-ie8.css" media="screen">
+    <![endif]-->
+</head>

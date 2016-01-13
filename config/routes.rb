@@ -1,4 +1,33 @@
 Rails.application.routes.draw do
+  get 'stylesheets/theme', as: 'theme_css'
+
+  root 'home#index'
+
+  get '/blog' => 'blog#index'
+  get '/blog/:id' => 'blog#show', as: 'post'
+  get '/blog/tag/:tag' => 'blog#tag', as: 'tag'
+  get '/blog/posts/category/:category' => 'blog#by_category', as: 'by_category'
+  get '/blog/posts/month/:month' => 'blog#by_month', as: 'by_month'
+
+  # devise_for :users
+
+  namespace :admin do
+    get '/', to: redirect('/admin/posts')
+    resources :posts
+    resources :categories, except: [:show]
+    resources :assets
+    resources :users
+    resources :admins, controller: 'users', only: [:create, :update, :new, :edit], type: 'admin'
+    resources :customers, controller: 'users', only: [:create, :update, :new, :edit], type: 'customer'
+    resources :configurations, except: [:index]
+    resources :preferences
+  end
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
+  }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

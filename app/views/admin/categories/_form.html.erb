@@ -1,0 +1,19 @@
+<%= simple_form_for([:admin, @category]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="box-body">
+
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :name %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :show_on_header %>
+      </div>
+    </div>
+
+  <div class="box-footer">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to t('generic.cancel'), admin_categories_path, class: 'btn btn-danger' %>
+  </div>
+<% end %>

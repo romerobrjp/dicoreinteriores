@@ -1,0 +1,11 @@
+<% flash.each do |key, message| %>
+  <% if message.is_a?(String) && message.present? %>
+    <% if key == 'notice' %>
+      <div id="message" class="alert alert-info" role="alert">        
+    <% elsif key == 'alert' %>
+      <div id="message" class="alert alert-danger" role="alert">
+    <% end %>
+      <%= simple_format(message) %>
+      </div>
+  <% end %>
+<% end %>
