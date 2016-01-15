@@ -44,6 +44,8 @@ pt-BR:
     title: 'Título'
     view_all_f: 'Ver todas'
     view_all_m: 'Ver todos'
+    go_home: 'Ir para a página principal'
+    404_error: 'A página que você tentou acessar não existe!'
   activerecord:
     attributes:
       asset:
