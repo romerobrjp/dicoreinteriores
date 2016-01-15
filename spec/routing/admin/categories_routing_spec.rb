@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe CategoriesController, type: :routing do
+RSpec.describe Admin::CategoriesController, type: :routing do
   describe "routing" do
 
     it "routes to #index" do
