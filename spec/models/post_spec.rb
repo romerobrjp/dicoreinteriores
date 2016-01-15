@@ -2,8 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
 
+  let(:valid_admin) {
+    Admin.create!(name: 'Test', surname: 'Test', cpf: '123456', phone1: '123456', email: 'test@test.com', password: '12345678')
+  }
+
   let(:valid_attributes) {
-    {title: 'test01', body: '123123123'}
+    {title: 'test01', body: '123123123', author: valid_admin}
   }
 
   let(:invalid_attributes) {

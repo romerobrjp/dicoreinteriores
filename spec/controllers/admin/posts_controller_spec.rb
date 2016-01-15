@@ -1,20 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Admin::PostsController, type: :controller do
-
-  let(:valid_attributes) {
-    {title: 'test01', body: '123123123'}
-  }
+  include Devise::TestHelpers
 
   let(:invalid_attributes) {
-    {title: '', body: 'asdsadadsd'}
+    {title: '', body: ''}
   }
 
   let(:valid_session) { {} }
 
+  before(:each) do
+    sign_in FactoryGirl.create(:admin)
+  end
+
   describe "GET #index" do
     it "assigns all posts as @posts" do
-      post = Post.create! valid_attributes
+      post = FactoryGirl.create(:post)
       get :index, {}, valid_session
       expect(assigns(:posts)).to eq([post])
     end
@@ -22,7 +23,7 @@ RSpec.describe Admin::PostsController, type: :controller do
 
   describe "GET #show" do
     it "assigns the requested post as @post" do
-      post = Post.create! valid_attributes
+      post = FactoryGirl.create(:post)
       get :show, {:id => post.to_param}, valid_session
       expect(assigns(:post)).to eq(post)
     end
@@ -37,7 +38,7 @@ RSpec.describe Admin::PostsController, type: :controller do
 
   describe "GET #edit" do
     it "assigns the requested post as @post" do
-      post = Post.create! valid_attributes
+      post = FactoryGirl.create(:post)
       get :edit, {:id => post.to_param}, valid_session
       expect(assigns(:post)).to eq(post)
     end
@@ -47,18 +48,18 @@ RSpec.describe Admin::PostsController, type: :controller do
     context "with valid params" do
       it "creates a new Admin::Post" do
         expect {
-          post :create, {:post => valid_attributes}, valid_session
+          post :create, {:post => FactoryGirl.attributes_for(:post)}, valid_session
         }.to change(Post, :count).by(1)
       end
 
       it "assigns a newly created post as @post" do
-        post :create, {:post => valid_attributes}, valid_session
+        post :create, {:post => FactoryGirl.attributes_for(:post)}, valid_session
         expect(assigns(:post)).to be_a(Post)
         expect(assigns(:post)).to be_persisted
       end
 
       it "redirects to the created post" do
-        post :create, {:post => valid_attributes}, valid_session
+        post :create, {:post => FactoryGirl.attributes_for(:post)}, valid_session
         expect(response).to redirect_to(admin_post_path(Post.last))
       end
     end
@@ -79,40 +80,39 @@ RSpec.describe Admin::PostsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {title: 'Teste 02', introduction: 'INTRODUCTION 02', body: 'BODY 02 UPDATED'}
       }
 
       it "updates the requested post" do
-        post = Post.create! valid_attributes
-        new_attributes = {title: 'teste02', body: 'teste02_body'}
+        post = FactoryGirl.create(:post)
         put :update, {:id => post.to_param, :post => new_attributes}, valid_session
         post.reload
-        expect(post.title).to eq('teste02')
-        expect(post.body).to eq('teste02_body')
+        expect(post.title).to eq('Teste 02')
+        expect(post.body).to eq('BODY 02 UPDATED')
       end
 
       it "assigns the requested post as @post" do
-        post = Post.create! valid_attributes
-        put :update, {:id => post.to_param, :post => valid_attributes}, valid_session
+        post = FactoryGirl.create(:post)
+        put :update, {:id => post.to_param, :post => FactoryGirl.attributes_for(:post)}, valid_session
         expect(assigns(:post)).to eq(post)
       end
 
       it "redirects to the post" do
-        post = Post.create! valid_attributes
-        put :update, {:id => post.to_param, :post => valid_attributes}, valid_session
+        post = FactoryGirl.create(:post)
+        put :update, {:id => post.to_param, :post => FactoryGirl.attributes_for(:post)}, valid_session
         expect(response).to redirect_to(admin_post_path(post))
       end
     end
 
     context "with invalid params" do
       it "assigns the post as @post" do
-        post = Post.create! valid_attributes
+        post = FactoryGirl.create(:post)
         put :update, {:id => post.to_param, :post => invalid_attributes}, valid_session
         expect(assigns(:post)).to eq(post)
       end
 
       it "re-renders the 'edit' template" do
-        post = Post.create! valid_attributes
+        post = FactoryGirl.create(:post)
         put :update, {:id => post.to_param, :post => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
@@ -121,14 +121,14 @@ RSpec.describe Admin::PostsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested post" do
-      post = Post.create! valid_attributes
+      post = FactoryGirl.create(:post)
       expect {
         delete :destroy, {:id => post.to_param}, valid_session
       }.to change(Post, :count).by(-1)
     end
 
     it "redirects to the posts list" do
-      post = Post.create! valid_attributes
+      post = FactoryGirl.create(:post)
       delete :destroy, {:id => post.to_param}, valid_session
       expect(response).to redirect_to(admin_posts_url)
     end
