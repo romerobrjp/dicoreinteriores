@@ -45,6 +45,8 @@ pt-BR:
     view_all_f: 'Ver todas'
     view_all_m: 'Ver todos'
     no_permission: 'Você não tem permissão para acessar essa página'
+    go_home: 'Ir para a página principal'
+    404_error: 'A página que você tentou acessar não existe!'
   activerecord:
     attributes:
       asset:

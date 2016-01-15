@@ -9,8 +9,12 @@ class BlogController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_id_and_draft!(params[:id], false)
-    impressionist(@post)
+    begin
+      @post = Post.find_by_id_and_draft!(params[:id], false)
+      impressionist(@post)
+    rescue ActiveRecord::RecordNotFound
+      render_not_found
+    end
   end
 
   def tag
