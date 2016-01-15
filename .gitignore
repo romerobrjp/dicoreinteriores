@@ -174,3 +174,4 @@ vendor/admin_template
 vendor/site_template
 
 db/schema.rb
+.byebug_history
