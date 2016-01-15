@@ -44,6 +44,7 @@ pt-BR:
     title: 'Título'
     view_all_f: 'Ver todas'
     view_all_m: 'Ver todos'
+    no_permission: 'Você não tem permissão para acessar essa página'
   activerecord:
     attributes:
       asset:
@@ -184,7 +185,8 @@ pt-BR:
       populars: 'Postagens populares'
       see_more: 'Ver mais'
     menu:
-        admin_panel: 'Painel do Admin'
+        admin_panel: 'Área do Administrador'
+        customer_panel: 'Área do Cliente'
         blog:
           do_it_yourself: 'Faça você mesmo'
           inspiration: 'Inspiração'

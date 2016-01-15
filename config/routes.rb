@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'stylesheets/theme', as: 'theme_css'
 
   root 'home#index'
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   # devise_for :users
 
   namespace :admin do
-    get '/', to: redirect('/admin/posts')
+    get '/', to: redirect('/admin/posts'), as: :root
     resources :posts
     resources :categories, except: [:show]
     resources :assets
@@ -21,6 +22,10 @@ Rails.application.routes.draw do
     resources :customers, controller: 'users', only: [:create, :update, :new, :edit], type: 'customer'
     resources :configurations, except: [:index]
     resources :preferences
+  end
+
+  namespace :customer do
+    get '/' => "home#index", as: :root
   end
 
   devise_for :users, controllers: {
