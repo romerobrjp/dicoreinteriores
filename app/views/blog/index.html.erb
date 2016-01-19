@@ -3,8 +3,11 @@
     <div class="container">
       <div class="row tzshow_sidebar">
         <div class="col-md-9">
-          <% @posts.each do |post| %>
-            <article id="post-<%= post.id %>" class="post-<%= post.id %> post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-love tag-songs blog-post">
+          <% @posts.each_with_index do |post, index| %>
+            <article 
+              id="post-<%= post.id %>" 
+              class="post-<%= post.id %> post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-love tag-songs blog-post"
+            >
               <% unless post.main_image.nil? %>
                 <div class="tzblog-img tzblog-format">
                   <a href="<%= post_path(post.id) %>">
@@ -26,11 +29,25 @@
                   <% end %>
                 </span>
               </div>
+
               <div class="tzthe_content">
                 <p><%= post.introduction %></p>
                 <%= link_to t('views.blog.see_more'), post_path(post.id), class: 'more-link' %>
               </div>
-            </article>
+
+              <% if index == 0 %>
+                <div class="tzthe_content text-center">
+                  <script async src="//"></script>
+                  <ins class="adsbygoogle"
+                       style="display:inline-block;width:728px;height:90px"
+                       data-ad-client="ca-pub-4116031825041905"
+                       data-ad-slot="3506349071"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>              
+              <% end %>
+            </article>            
           <% end %>
 
           <div class="tzpagenavi-blog">
