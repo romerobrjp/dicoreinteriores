@@ -6,7 +6,7 @@ class Admin::AdminController < ApplicationController
   private
   def authenticate_admin
     unless authenticate_user! && current_user.type == 'Admin'
-      redirect_to root_path, alert: t('controllers.generic.no_permission')
+      redirect_to root_path, alert: t('generic.no_permission')
     end
   end
 

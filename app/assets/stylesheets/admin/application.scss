@@ -34,3 +34,7 @@ $fa-font-path: "font-awesome" !default;
     @include img-responsive;
   }
 }
+
+body {
+  line-height: 1.42857143;
+}
