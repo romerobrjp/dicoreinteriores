@@ -9,7 +9,8 @@
     </li>
 
     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children" id="menu-item-183">
-      <%= link_to t('views.menu.admin_panel'), :admin_posts if current_user.present? and current_user.type == 'Admin' %>
+      <%= link_to t('views.menu.admin_panel'), admin_root_path if current_user.present? and current_user.type == 'Admin' %>
+      <%= link_to t('views.menu.customer_panel'), customer_root_path if current_user.present? and current_user.type == 'Customer' %>
     </li>
 
     <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children" id="menu-item-183">

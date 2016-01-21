@@ -14,8 +14,7 @@
  *= require_self
  *= require admin/AdminLTE
  *= require bootstrap-markdown/bootstrap-markdown.min
- *= require admin/skin-purple
- *= require colorpicker/bootstrap-colorpicker
+ *= require admin/skin-red-light
  *= require proto.io.switch
  */
 
@@ -34,6 +33,7 @@ $fa-font-path: "font-awesome" !default;
     @include img-responsive;
   }
 }
+
 
 body {
   line-height: 1.42857143;
