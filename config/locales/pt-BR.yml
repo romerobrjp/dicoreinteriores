@@ -47,6 +47,9 @@ pt-BR:
     no_permission: 'Você não tem permissão para acessar essa página'
     go_home: 'Ir para a página principal'
     404_error: 'A página que você tentou acessar não existe!'
+    last_login: Último Login
+    configurations: Configurações
+    change_password: Alterar Senha
   activerecord:
     attributes:
       asset:
@@ -75,6 +78,8 @@ pt-BR:
         surname: Sobrenome
         email: Email
         password: Senha
+        current_password: Senha atual
+        password_confirmation: Confirme a senha
         cpf: CPF
         phone1: Telefone (principal)
         phone2: Telefone (secundário)
