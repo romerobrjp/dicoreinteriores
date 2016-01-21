@@ -1,15 +1,10 @@
 <!-- Begin Footer -->
 <footer class="tz-footer">
   <div class="container">
-    <div class="row">
+    <div class="row vertical-center">
       <div class="col-md-4 footerattr">
         <aside class="widget_contact_info widget" id="contact_info-2">
           <%= link_to image_tag('logo.png', width: '150'), root_path %>
-          <!-- <h3 class="module-title title-widget">
-            <span> <%= t('generic.get_in_touch') %> </span>
-          </h3>
-          <div class="tzwidget-contact">
-          </div> -->
         </aside>
       </div>
 
@@ -24,11 +19,13 @@
 
       <div class="col-md-4 footerattr">
         <aside class="widget_tz_social widget" id="tz_social-2">
-          <ul style="text-align: left;">
-            <li> <%= "#{t('generic.get_in_touch').upcase}: " %> </li>
-            <li> <%= "#{t('generic.get_in_touch_name').upcase}" %> </li>
-            <li> <%= "#{t('generic.get_in_touch_email').upcase}" %> </li>
-          </ul>
+          <h3 class="module-title title-widget">
+            <span> <%= t('generic.get_in_touch') %> </span>
+          </h3>
+          
+          <span> <%= "#{t('generic.get_in_touch_name').upcase}" %> </span>
+          <span> <%= "#{t('generic.get_in_touch_email').upcase}" %> </span>
+          
           <!-- <h3 class="module-title title-widget">
             <span> <%= t('generic.social_networks') %> </span>
           </h3>
@@ -39,7 +36,6 @@
             <a class="fa fa-twitter" href="#"></a>
             <a class="fa fa-youtube" href="#"></a>
           </div> -->
-
         </aside>
       </div>
     </div>
