@@ -89,6 +89,10 @@ pt-BR:
         city: Cidade
         state: Estado
         zip_code: CEP
+      space_type:
+        name: Nome
+        picture: Imagem (240x240)
+        created_at: Criado em
     models:
       asset:
         one: 'Arquivo'
@@ -105,6 +109,9 @@ pt-BR:
       user:
         one: 'Usuário'
         other: 'Usuários'
+      space_type:
+        one: 'Tipo de Ambiente'
+        other: 'Tipos de Ambiente'
   controllers:
     app:
     assets:
@@ -373,6 +380,13 @@ pt-BR:
       create: Criar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
+      delete: Excluir %{model}
+      create_success: "%{model} criado(a) com sucesso"
+      update_success: "%{model} atualizado(a) com sucesso"
+      delete_success: "%{model} excluído com sucesso"        
+    new: Novo(a) %{model}
+    edit: Editando %{model}
+    cancel: Cancelar
   number:
     currency:
       format:

@@ -3,12 +3,12 @@
 
 # Add new inflection rules using the following format
 # (all these examples are active by default):
-# ActiveSupport::Inflector.inflections do |inflect|
-#   inflect.plural /^(ox)$/i, '\1en'
-#   inflect.singular /^(ox)en/i, '\1'
-#   inflect.irregular 'person', 'people'
-#   inflect.uncountable %w( fish sheep )
-# end
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.plural /^(ox)$/i, '\1en'
+  inflect.singular /^(ox)en/i, '\1'
+  inflect.irregular 'space_type', 'space_types'
+end
+
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.clear
 
@@ -46,7 +46,7 @@
 #   inflect.singular(/^(.*[^s]s)es$/i, '\1')
 #   inflect.singular(/ães$/i, 'ão')
 #   inflect.singular(/aes$/i, 'ao')
-#   inflect.singular(/ãos$/i, 'ão')    
+#   inflect.singular(/ãos$/i, 'ão')
 #   inflect.singular(/aos$/i, 'ao')
 #   inflect.singular(/ões$/i, 'ão')
 #   inflect.singular(/oes$/i, 'ao')

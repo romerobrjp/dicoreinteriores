@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :customers, controller: 'users', only: [:create, :update, :new, :edit], type: 'customer'
     resources :configurations, except: [:index]
     resources :preferences
+    resources :space_types, except: [:show]
   end
 
   namespace :customer do

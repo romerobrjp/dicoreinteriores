@@ -1,0 +1,42 @@
+<% content_for :page_header, SpaceType.model_name.human(count: 2) %>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title"><%= t('views.admin.menu.space_types') %></h3>
+    <div class="box-tools pull-right">
+      <%= link_to t('helpers.submit.create', model: SpaceType.model_name.human), new_admin_space_type_path, class: 'btn btn-sm btn-primary' %>
+    </div>
+  </div>
+
+  <div class="box-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th><%= SpaceType.human_attribute_name(:name) %></th>
+          <th><%= SpaceType.human_attribute_name(:picture) %></th>
+          <th><%= SpaceType.human_attribute_name(:created_at) %></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @space_types.each do |space_type| %>
+        <tr>
+          <td><%= space_type.name %></td>
+          <td>
+            <%= link_to 'view picture', space_type.picture.url(:thumb) %>
+          </td>
+          <td><%= space_type.created_at %></td>
+          <td>
+            <div class="btn-group btn-group-xs" role="group">
+              <%= link_to edit_admin_space_type_path(space_type), class: 'btn btn-warning' do %>
+              <i class="fa fa-pencil"></i><% end %>
+              <%= link_to admin_space_type_path(space_type), method: :delete, data: { confirm: t('generic.are_you_sure') }, class: 'btn btn-danger' do %>
+              <i class="fa fa-trash"></i><% end %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
