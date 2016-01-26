@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     get '/' => "home#index", as: :root
     match '/', to: "home#update", via: [:put, :patch], as: :update
     match '/update_password', to: "home#update_password", via: [:put, :patch], as: :update_password
+    resources :project_requests
   end
 
   devise_for :users, controllers: {

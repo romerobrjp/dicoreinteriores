@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Confirm your project</div>
+  <div class="panel-body">
+    <p>{{ nprCtrl.project_request.description }}</p>
+    <ul>
+      <li ng-repeat="item in nprCtrl.project_request.attachments">
+        <p> {{item.filename}} </p>
+        <p> {{item.content_type}} </p>        
+        <p> {{item.url}} </p>
+      </li>
+    </ul>
+  </div>
+  <div class="panel-footer">
+    <button class="btn btn-danger pull-right" ng-click="nprCtrl.delete()">Delete</button>
+    <div class="clearfix"></div>
+  </div>
+</div>

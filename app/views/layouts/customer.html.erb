@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='customer-app'>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +13,9 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <%= csrf_meta_tags %>
+    <style>
+      <%= yield :styles %>
+    </style>
   </head>
   <body class="hold-transition skin-red-light sidebar-mini">
     <div class="wrapper">

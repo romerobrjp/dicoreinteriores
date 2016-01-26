@@ -18,6 +18,9 @@
 //= require admin/app
 //= require colorpicker/bootstrap-colorpicker
 //= require clipboard
+//= require angular
+//= require angular-resource
+//= require angular-file-upload
 //= require_tree .
 
 new Clipboard('.clipboard-btn');
@@ -28,3 +31,5 @@ $(function () {
   //color picker with addon
   $(".my-colorpicker2").colorpicker();
 })
+
+angular.module('customer-app', ['project_request']);

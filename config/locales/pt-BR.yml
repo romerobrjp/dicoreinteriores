@@ -93,6 +93,10 @@ pt-BR:
         name: Nome
         picture: Imagem (240x240)
         created_at: Criado em
+      project_request:
+        space_type: Tipo de Ambiente
+        status: Status da Solicitação
+        created_at: Criado em
     models:
       asset:
         one: 'Arquivo'
@@ -112,6 +116,9 @@ pt-BR:
       space_type:
         one: 'Tipo de Ambiente'
         other: 'Tipos de Ambiente'
+      project_request:
+        one: 'Requisição de Projeto'
+        other: 'Requisições de Projetos'
   controllers:
     app:
     assets:
@@ -383,7 +390,7 @@ pt-BR:
       delete: Excluir %{model}
       create_success: "%{model} criado(a) com sucesso"
       update_success: "%{model} atualizado(a) com sucesso"
-      delete_success: "%{model} excluído com sucesso"        
+      delete_success: "%{model} excluído com sucesso"
     new: Novo(a) %{model}
     edit: Editando %{model}
     cancel: Cancelar
