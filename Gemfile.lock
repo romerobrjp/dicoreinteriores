@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.7.0)
     actionmailer (4.2.5)
       actionpack (= 4.2.5)
       actionview (= 4.2.5)
@@ -233,6 +234,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm (~> 4.7)
   acts-as-taggable-on (~> 3.4)
   byebug
   capistrano

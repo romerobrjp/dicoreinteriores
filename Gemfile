@@ -41,6 +41,7 @@ gem 'redcarpet'
 gem 'kaminari', "~> 0.16.3"
 gem 'puma'
 gem 'impressionist', "1.5.1"
+gem 'aasm', "~> 4.7"
 
 gem 'foreman', require: false
 
