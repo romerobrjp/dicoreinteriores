@@ -16,6 +16,17 @@ aside {
   }
 }
 
+aside.widget_categories.widget.right-section-social-widget {
+  border: none !important;
+}
+
+aside {
+  > h3.module-title.title-widget.right-section-social-header {
+      background-color: #FFF !important;
+      color: #000 !important;
+  }
+}
+
 .tzsidebar-event {
   margin-top: 0px;
 }
