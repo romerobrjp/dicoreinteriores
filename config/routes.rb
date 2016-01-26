@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post 'attachments/ng_upload'
+
   get 'stylesheets/theme', as: 'theme_css'
 
   root 'home#index'
