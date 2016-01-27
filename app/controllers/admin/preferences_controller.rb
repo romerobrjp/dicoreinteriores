@@ -1,6 +1,6 @@
 class Admin::PreferencesController < Admin::AdminController
   before_action :set_preference, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /admin/preferences
   # GET /admin/preferences.json
   def index
@@ -69,6 +69,6 @@ class Admin::PreferencesController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def preference_params
-      params.require(:preference).permit(:color_1, :color_2, :color_3, :color_4, :color_5, :user_id)
+      params.require(:preference).permit(:color_1, :color_2, :color_3, :color_4, :color_5, :user_id, :header_image, :footer_image)
     end
 end

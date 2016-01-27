@@ -41,7 +41,21 @@
         <h4> <%= @preference.color_5 %> </h4>
         <div class="colorpicker-sample-box" style="background-color: <%= @preference.color_5 %>"> </div>
       </div>
--->
+-->      
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4> <%= t('activerecord.attributes.preference.header_image') %> </h4>
+        <%= image_tag @preference.header_image.url, class: 'bg-img-sample-box' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4> <%= t('activerecord.attributes.preference.footer_image') %> </h4>
+        <%= image_tag @preference.footer_image.url, class: 'bg-img-sample-box' %>
+      </div>
     </div>
   </div>
 </div>
