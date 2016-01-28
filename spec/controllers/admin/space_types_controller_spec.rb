@@ -76,14 +76,14 @@ RSpec.describe Admin::SpaceTypesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: 'New Name'}
       }
 
       it "updates the requested space_type" do
         space_type = FactoryGirl.create(:space_type)
         put :update, {:id => space_type.to_param, :space_type => new_attributes}, valid_session
         space_type.reload
-        skip("Add assertions for updated state")
+        expect(space_type.name).to eq('New Name')
       end
 
       it "assigns the requested space_type as @space_type" do

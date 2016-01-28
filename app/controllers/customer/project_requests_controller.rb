@@ -4,7 +4,7 @@ class Customer::ProjectRequestsController < Customer::CustomerController
   # GET /project_requests
   # GET /project_requests.json
   def index
-    @project_requests = ProjectRequest.from_customer current_user
+    @project_requests = ProjectRequest.from_customer(current_user)
   end
 
   # GET /project_requests/1
@@ -30,7 +30,7 @@ class Customer::ProjectRequestsController < Customer::CustomerController
 
     respond_to do |format|
       if @project_request.save
-        format.html { redirect_to @project_request, notice: 'Project request was successfully created.' }
+        format.html { redirect_to customer_project_request_path(@project_request), notice: 'Project request was successfully created.' }
         format.json { render :show, status: :created  }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class Customer::ProjectRequestsController < Customer::CustomerController
   def update
     respond_to do |format|
       if @project_request.update(project_request_params)
-        format.html { redirect_to @project_request, notice: 'Project request was successfully updated.' }
+        format.html { redirect_to customer_project_request_path(@project_request), notice: 'Project request was successfully updated.' }
         format.json { render :show, status: :created }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class Customer::ProjectRequestsController < Customer::CustomerController
   def destroy
     @project_request.destroy
     respond_to do |format|
-      format.html { redirect_to project_requests_url, notice: 'Project request was successfully destroyed.' }
+      format.html { redirect_to customer_project_requests_url, notice: 'Project request was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +71,10 @@ class Customer::ProjectRequestsController < Customer::CustomerController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_request_params
-      params.permit(:space_type_id, :description)
+      if params.has_key? 'project_request'
+        params[:project_request].permit(:space_type_id, :description)
+      else
+        params.permit(:space_type_id, :description)
+      end
     end
 end
