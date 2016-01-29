@@ -1,5 +1,5 @@
 class Customer::ProjectRequestsController < Customer::CustomerController
-  before_action :set_project_request, only: [:show, :edit, :update, :destroy]
+  before_action :set_project_request, only: [:show, :edit, :update, :destroy, :send_to_approval]
 
   # GET /project_requests
   # GET /project_requests.json
@@ -20,6 +20,7 @@ class Customer::ProjectRequestsController < Customer::CustomerController
 
   # GET /project_requests/1/edit
   def edit
+    render :new
   end
 
   # POST /project_requests
@@ -59,8 +60,12 @@ class Customer::ProjectRequestsController < Customer::CustomerController
     @project_request.destroy
     respond_to do |format|
       format.html { redirect_to customer_project_requests_url, notice: 'Project request was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { head :no_content, notice: 'Project request was successfully destroyed.' }
     end
+  end
+
+  def send_to_approval
+
   end
 
   private

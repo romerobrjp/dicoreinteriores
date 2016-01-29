@@ -5,7 +5,7 @@
       <% SpaceType.all.each do |space_type| %>
       <label>
         <input type="radio" name="space_type" ng-model="nprCtrl.project_request.space_type_id" value="<%= space_type.id %>" />
-        <%= image_tag space_type.picture.url(:thumb) %>
+        <%= image_tag space_type.picture.url(:thumb), class: 'img-thumbnail' %>
       </label>
       <% end %>
     <% end %>

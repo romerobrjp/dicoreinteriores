@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   post 'attachments/ng_upload'
+  delete 'attachments/ng_delete/:id' => 'attachments#ng_delete'
 
   get 'stylesheets/theme', as: 'theme_css'
 

@@ -8,4 +8,10 @@ class AttachmentsController < ApplicationController
     render json: @attachment
   end
 
+  def ng_delete
+    @attachment = Attachment.find(params[:id])
+    @attachment.destroy
+    head :no_content
+  end
+
 end

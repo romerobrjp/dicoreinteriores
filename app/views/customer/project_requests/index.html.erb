@@ -22,9 +22,7 @@
         <% @project_requests.each do |project_request| %>
         <tr>
           <td><%= project_request.space_type.name %></td>
-          <td>
-            <td><%= project_request.status %></td>
-          </td>
+          <td><%= project_request.status %></td>
           <td><%= project_request.created_at %></td>
           <td>
             <div class="btn-group btn-group-xs" role="group">

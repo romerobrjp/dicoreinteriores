@@ -7,34 +7,60 @@ angular.module 'project_request', ['ngResource', 'angularFileUpload']
     'destroy':  { method: 'DELETE', url: '/customer/project_requests/:id.json' }
   }
 ]
-.controller 'NewProjectRequestCtrl', ['$scope', 'ProjectRequest', 'FileUploader', ($scope, ProjectRequest, FileUploader) ->
+.controller 'NewProjectRequestCtrl', ['$scope', 'ProjectRequest', 'FileUploader', '$http', 'Notification', ($scope, ProjectRequest, FileUploader, $http, Notification) ->
+
+  url = window.location.pathname
+  if url.indexOf('/edit') > 0
+    @project_request = ProjectRequest.get(id: url.match(/\d+/g)[0])
+  else
+    @project_request = {description: 'empty', attachments: []}
+
   @step = 1
-  @project_request = {description: 'empty', attachments: []}
-  ctrl = this
 
   @uploader = new FileUploader {
     url: '/attachments/ng_upload',
-    formData: [{attachable_type: 'ProjectRequest'}]
+    formData: [{attachable_type: 'ProjectRequest', attachable_id: @project_request.id}]
   }
-  @uploader.onSuccessItem = (fileItem, response, status, headers) ->
+  @uploader.onSuccessItem = (fileItem, response, status, headers) =>
     return
 
-  @next = () ->
-    if ctrl.step == 1
-      ProjectRequest.save ctrl.project_request, (data) ->
-        ctrl.project_request = data
-        ctrl.uploader.formData[0]['attachable_id'] = data['id']
-        ctrl.step++
+  @next = () =>
+    if @project_request.id?
+      ProjectRequest.update @project_request, (data) =>
+        @project_request = data
+        @uploader.formData[0]['attachable_id'] = @project_request['id']
+        Notification.primary('Project Request Saved');
+        @step++
         return
     else
-      ProjectRequest.update ctrl.project_request, (data) ->
-        ctrl.project_request = data
-        ctrl.step++
+      ProjectRequest.save @project_request, (data) =>
+        @project_request = data
+        @uploader.formData[0]['attachable_id'] = @project_request['id']
+        Notification.primary('Project Request Saved');
+        @step++
         return
     return
-  @delete = () ->
-    ProjectRequest.destroy ctrl.project_request, (data) ->
+
+  @delete = () =>
+    ProjectRequest.destroy @project_request, () ->
+      Notification.primary('Project Request Deleted');
+      window.location.assign("/customer/project_requests")
       return
+    return
+
+  @deleteAttachment = (attachment) =>
+    $http.delete('/attachments/ng_delete/' + attachment.id)
+      .then((response) =>
+        i = @project_request.attachments.indexOf(attachment)
+        @project_request.attachments.splice(i, 1)
+        Notification.primary('Attachment Deleted');
+        return
+      )
+    return
+
+  @isImage = (contentType) ->
+    return contentType.search(/image/g) >= 0
+
   return
 ]
 .config ['$httpProvider', ($httpProvider) ->

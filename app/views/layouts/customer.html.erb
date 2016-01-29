@@ -136,6 +136,22 @@
         <section class="sidebar">
           <ul class="sidebar-menu">
             <li class="header"><%= t('views.admin.menu.title') %></li>
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pencil-square-o"></i>
+                <span><%= t('activerecord.models.project_request.other') %></span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+
+              <ul class="treeview-menu">
+                <li>
+                  <%= link_to customer_project_requests_path do %>
+                    <i class="fa fa-circle-o"></i> <%= t('activerecord.models.project_request.other') %>
+                  <% end %>
+                </li>
+              </ul>
+            </li>
           </ul>
         </section>
       </aside>

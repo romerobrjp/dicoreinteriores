@@ -4,14 +4,20 @@
     <p>{{ nprCtrl.project_request.description }}</p>
     <ul>
       <li ng-repeat="item in nprCtrl.project_request.attachments">
-        <p> {{item.filename}} </p>
-        <p> {{item.content_type}} </p>        
-        <p> {{item.url}} </p>
+        <p>
+          <a href="{{ item.url }}" target='_blank'>{{item.filename}}</a>
+          <a href="#" ng-click="nprCtrl.deleteAttachment(item)">Delete</a>
+        </p>
+        <img ng-src="{{ item.url }}" ng-show="nprCtrl.isImage(item.content_type)" class="img-responsive project-request-img" />
       </li>
     </ul>
   </div>
   <div class="panel-footer">
-    <button class="btn btn-danger pull-right" ng-click="nprCtrl.delete()">Delete</button>
+    <div class="btn-group pull-right">
+    <button class="btn btn-primary" ng-click="nprCtrl.save()">Save Draft</button>
+    <button class="btn btn-success" ng-click="nprCtrl.approve()">Send to Approval</button>
+    <button class="btn btn-danger" ng-click="nprCtrl.delete()">Delete request</button>
+    </div>
     <div class="clearfix"></div>
   </div>
 </div>
