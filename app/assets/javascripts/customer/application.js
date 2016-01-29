@@ -21,6 +21,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-file-upload
+//= require angular-ui-notification
 //= require_tree .
 
 new Clipboard('.clipboard-btn');
@@ -32,4 +33,15 @@ $(function () {
   $(".my-colorpicker2").colorpicker();
 })
 
-angular.module('customer-app', ['project_request']);
+angular.module('customer-app', ['ui-notification', 'project_request'])
+.config(['NotificationProvider', function(NotificationProvider) {
+        NotificationProvider.setOptions({
+            delay: 5000,
+            startTop: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'left',
+            positionY: 'bottom'
+        });
+}]);
