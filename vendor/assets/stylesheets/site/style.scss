@@ -5686,7 +5686,7 @@ a{
     font-size: 14px;
     line-height: 16.8px;
     margin: 0;
-    padding: 25px 5px 25px 33px;
+    padding: 15px 5px 15px 33px;
     position: relative;
     text-align: left;
 }
@@ -7042,7 +7042,7 @@ h2.tribe-events-page-title:after {
     font-size: 14px;
     line-height: 16.8px;
     margin: 0 ;
-    padding: 25px 5px 25px 33px;
+    padding: 15px 5px 15px 33px;
     position: relative;
     text-align: left;
     letter-spacing: 2px;
@@ -7317,14 +7317,14 @@ h2.tribe-events-page-title:after {
 }
 .tzblog-title{
     padding: 0 0 4px;
-    margin: 0;
+    margin: 20px 0px 10px 0px;
     line-height: 20px;
 }
 .tzblog-title a{
     padding: 0;
     margin: 0;
     line-height: 24px;
-    font-size: 18px;
+    font-size: 24px;
     color: #1f1f1f;
     letter-spacing: 3px;
     display: block;
@@ -7537,6 +7537,7 @@ h2.tribe-events-page-title:after {
 /*===============Blog sidebar===========*/
 .tzshow_sidebar .tzsidebar-event{
     margin-top: 0;
+    margin-left: 60px;
 }
 .tzshow_sidebar .blog-gird-item3 .tzblog-format {
     height: 170px;

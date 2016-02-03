@@ -21,10 +21,12 @@
 
 pt-BR:
   generic:
+    active_q: 'Ativo?'
     app_name: 'DIcore Interiores'
     are_you_sure: 'Tem certeza?'
     back: 'Voltar'
     cancel: 'Cancelar'
+    copyright: 'Copyright ®'
     copyright_msg: 'Todos os direitos reservados'
     created_at: 'Criado em'
     description: 'Descrição'
@@ -33,6 +35,8 @@ pt-BR:
     edit: 'Editar'
     file: 'Arquivo'
     get_in_touch: 'Contato'
+    get_in_touch_name: 'Vivian Mirelly, Designer de Interiores'
+    get_in_touch_email: 'dicoreinteriores@gmail.com'
     manage_users: 'Gerenciar usuários'
     message: 'Mensagem'
     messages: 'Mensagens'
@@ -44,6 +48,8 @@ pt-BR:
     title: 'Título'
     view_all_f: 'Ver todas'
     view_all_m: 'Ver todos'
+    go_home: 'Ir para a página principal'
+    404_error: 'A página que você tentou acessar não existe!'
   activerecord:
     attributes:
       asset:
@@ -62,6 +68,10 @@ pt-BR:
         tag_list: 'Tags (Separadas por vírgula)'
         title: 'Título'
       preference:
+        footer_image: 'Imagem de fundo para rodapé'
+        footer_image_allowed: 'User esta imagem de fundo para rodapé'
+        header_image: 'Imagem de fundo para cabeçalho'
+        header_image_allowed: 'User esta imagem de fundo para cabeçalho'
         color_1: 'Cor principal (cabeçalho e rodapé)'
         color_2: 'Cor texto primário (cabeçalhos e rodapé)'
         color_3: 'Cor texto secundário (ícones, etc)'
@@ -113,6 +123,13 @@ pt-BR:
         success: 'Postagem removida com sucesso'
       update:
         success: 'Postagem atualizada com sucesso'
+    preferences:
+      create:
+        success: 'Preferência criada com sucesso'
+      destroy:
+        success: 'Preferência removida com sucesso'
+      update:
+        success: 'Preferência atualizada com sucesso'
     users:
       create:
         success: 'Usuário criado com sucesso'

@@ -8,11 +8,8 @@
       <div class="col-md-12">
 
         <div class="onoffswitch">
-          <%= f.check_box :draft, class: 'onoffswitch-checkbox' %>
-          <label class="onoffswitch-label" for="post_draft">
-              <span class="onoffswitch-inner"></span>
-              <span class="onoffswitch-switch"></span>
-          </label>
+          <%= f.label t('activerecord.attributes.post.draft') %>
+          <%= f.check_box :draft %>
         </div>
 
       </div>

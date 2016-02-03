@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Asset, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it { should have_attached_file(:file) }
+  it { should validate_attachment_presence(:file) }
+
 end

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<%= render 'shared/head' %>
+
+  <body class="themecolorCustom">
+    <!-- Begin section images loading -->
+    <div id="tzloadding">
+      <%= image_tag 'site/loading.gif', class: 'loadding_img' %>
+    </div>
+    <!-- End section images loading -->
+    <!-- Begin section everline_boxed -->
+    <div class="everline_boxed">
+      <%= yield %>
+      <!-- End class container-->
+    </div>
+    <!-- End section everline_boxed -->
+    <%= javascript_include_tag 'application' %>
+  </body>
+
+  </body>
+
+</html>
