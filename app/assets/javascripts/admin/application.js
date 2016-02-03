@@ -17,6 +17,8 @@
 //= require bootstrap-markdown
 //= require admin/app
 //= require colorpicker/bootstrap-colorpicker
+//= require bootstrap-checkbox/bootstrap-checkbox
+//= require bootstrap-checkbox/i18n/pt
 //= require clipboard
 //= require_tree .
 
@@ -28,3 +30,8 @@ $(function () {
   //color picker with addon
   $(".my-colorpicker2").colorpicker();
 })
+
+$(':checkbox').checkboxpicker();
+
+$('#header_image_allowed_show_page').prop('disabled', true);
+$('#footer_image_allowed_show_page').prop('disabled', true);
