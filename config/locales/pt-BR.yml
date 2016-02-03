@@ -21,6 +21,7 @@
 
 pt-BR:
   generic:
+    active_q: 'Ativo?'
     app_name: 'DIcore Interiores'
     are_you_sure: 'Tem certeza?'
     back: 'Voltar'
@@ -68,7 +69,9 @@ pt-BR:
         title: 'Título'
       preference:
         footer_image: 'Imagem de fundo para rodapé'
+        footer_image_allowed: 'User esta imagem de fundo para rodapé'
         header_image: 'Imagem de fundo para cabeçalho'
+        header_image_allowed: 'User esta imagem de fundo para cabeçalho'
         color_1: 'Cor principal (cabeçalho e rodapé)'
         color_2: 'Cor texto primário (cabeçalhos e rodapé)'
         color_3: 'Cor texto secundário (ícones, etc)'

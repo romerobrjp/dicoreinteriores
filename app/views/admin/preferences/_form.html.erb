@@ -1,7 +1,7 @@
 <%= form_for([:admin, @preference], html: { multipart: true }) do |f| %>
   <div class="box-body">
     <div class="row">
-      <div class="col-md-2 form-group">
+      <div class="col-md-4 form-group">
         <%= f.label t('activerecord.attributes.preference.color_1') %>
         <div class="input-group my-colorpicker2">
           <%= f.text_field :color_1, class: 'form-control' %>
@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <div class="col-md-2 form-group">
+      <div class="col-md-4 form-group">
         <%= f.label t('activerecord.attributes.preference.color_2') %>
         <div class="input-group my-colorpicker2">
           <%= f.text_field :color_2, class: 'form-control' %>
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="col-md-2 form-group">
+      <div class="col-md-4 form-group">
         <%= f.label t('activerecord.attributes.preference.color_3') %>
         <div class="input-group my-colorpicker2">
           <%= f.text_field :color_3, class: 'form-control' %>
@@ -30,46 +30,33 @@
           </div>
         </div>
       </div>
-<!--
-      <div class="col-md-2 form-group">
-        <%= f.label t('activerecord.attributes.preference.color_4') %>
-        <div class="input-group my-colorpicker2">
-          <%= f.text_field :color_4, class: 'form-control' %>
-          <div class="input-group-addon">
-            <i></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-2 form-group">
-        <%= f.label t('activerecord.attributes.preference.color_5') %>
-        <div class="input-group my-colorpicker2">
-          <%= f.text_field :color_5, class: 'form-control' %>
-          <div class="input-group-addon">
-            <i></i>
-          </div>
-        </div>
-      </div>
-    -->
     </div>
 
     <div class="row">
-      <div class="col-md-6 form-group">
-        <%= f.label t('activerecord.attributes.preference.header_image') %>
-        <div class="input-group">
+      <div class="col-md-6 form-group custom-form-group">
+        <%= f.label t('activerecord.attributes.preference.header_image') %>        
+
+        <div class="input-group custom-input-group-for-image">
           <%= image_tag @preference.header_image.url, height: '120' %>
           <%= f.file_field :header_image, style: "margin-top: 10px;" %>
         </div>
+
+        <%= f.label t('activerecord.attributes.preference.header_image_allowed') %>
+        <%= f.check_box :header_image_allowed %>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-6 form-group">
+      <div class="col-md-6 form-group custom-form-group">
         <%= f.label t('activerecord.attributes.preference.footer_image') %>
-        <div class="input-group">
-          <%= image_tag @preference.footer_image.url, height: '120' %>          
+        
+        <div class="input-group custom-input-group-for-image">
+          <%= image_tag @preference.footer_image.url, height: '120' %>
           <%= f.file_field :footer_image, style: "margin-top: 10px;" %>
         </div>
+
+        <%= f.label t('activerecord.attributes.preference.footer_image_allowed') %>
+        <%= f.check_box :footer_image_allowed %>        
       </div>
     </div>
 
