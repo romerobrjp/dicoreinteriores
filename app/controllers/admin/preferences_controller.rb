@@ -28,7 +28,7 @@ class Admin::PreferencesController < Admin::AdminController
 
     respond_to do |format|
       if @preference.save
-        format.html { redirect_to admin_preference_path(@preference), notice: 'Preference was successfully created.' }
+        format.html { redirect_to admin_preference_path(@preference), notice: t('controllers.preferences.create.success') }
         format.json { render :show, status: :created, location: @preference }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::PreferencesController < Admin::AdminController
   def update
     respond_to do |format|
       if @preference.update(preference_params)
-        format.html { redirect_to admin_preference_path(@preference), notice: 'Preference was successfully updated.' }
+        format.html { redirect_to admin_preference_path(@preference), notice: t('controllers.preferences.update.success') }
         format.json { render :show, status: :ok, location: @preference }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::PreferencesController < Admin::AdminController
   def destroy
     @preference.destroy
     respond_to do |format|
-      format.html { redirect_to admin_preferences_path, notice: 'Preference was successfully destroyed.' }
+      format.html { redirect_to admin_preferences_path, notice: t('controllers.preferences.destroy.success') }
       format.json { head :no_content }
     end
   end

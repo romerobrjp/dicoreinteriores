@@ -183,3 +183,27 @@ body.themecolorCustom.theme-box .everline_boxed header.headerAnimate .wrapbox {
 .tzsidebar-event aside .module-title {
   color: <%= @preference.color_2 %> !important;
 }
+
+.themecolorCustom .tz-header {
+    background-image: url('<%= @preference.header_image.url %>') !important;
+}
+
+.themecolorCustom .tz-footer {
+    background-image: url('<%= @preference.footer_image.url %>') !important;
+}
+
+.themecolorCustom .tz-header1 .tzlogo a {
+    background: none !important;
+}
+
+.tz-header-page .tz-menu li a {
+    padding: 20px 35px 15px 0px;
+}
+
+.tz-header-page .tzlogo {
+    padding: 0px;
+}
+
+.footerattr aside {
+    margin: 0px;
+}

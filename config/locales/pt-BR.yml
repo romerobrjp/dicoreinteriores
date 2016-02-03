@@ -120,6 +120,13 @@ pt-BR:
         success: 'Postagem removida com sucesso'
       update:
         success: 'Postagem atualizada com sucesso'
+    preferences:
+      create:
+        success: 'Preferência criada com sucesso'
+      destroy:
+        success: 'Preferência removida com sucesso'
+      update:
+        success: 'Preferência atualizada com sucesso'
     users:
       create:
         success: 'Usuário criado com sucesso'
