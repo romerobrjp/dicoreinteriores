@@ -32,24 +32,24 @@
     </div>
 
     <div class="row">
-      <div class="col-md-6 custom-form-group">
+      <div class="col-md-12 custom-form-group">
         <h5> <%= t('activerecord.attributes.preference.header_image') %> </h5>
         <div class="input-group custom-input-group-for-image">
           <%= t('generic.active_q') %>
           <%= check_box_tag :header_image_allowed_show_page, @preference.header_image_allowed, @preference.footer_image_allowed %>
-        </div>        
-        <%= image_tag @preference.header_image.url, class: 'bg-img-sample-box' %>
+        </div>
+        <%= image_tag @preference.header_image.url, class: 'bg-img-sample-box img-responsive' %>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <h5> <%= t('activerecord.attributes.preference.footer_image') %> </h5>
         <div class="input-group custom-input-group-for-image">
           <%= t('generic.active_q') %>
           <%= check_box_tag :footer_image_allowed_show_page, @preference.footer_image_allowed, @preference.footer_image_allowed %>
         </div>
-        <%= image_tag @preference.footer_image.url, class: 'bg-img-sample-box' %>
+        <%= image_tag @preference.footer_image.url, class: 'bg-img-sample-box img-responsive' %>
       </div>
     </div>
   </div>
