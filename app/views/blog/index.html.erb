@@ -2,10 +2,10 @@
   <div class="tzblog-columns">
     <div class="container">
       <div class="row tzshow_sidebar">
-        <div class="col-md-7 col-md-offset-1">
+        <div class="col-md-8">
           <% @posts.each_with_index do |post, index| %>
-            <article 
-              id="post-<%= post.id %>" 
+            <article
+              id="post-<%= post.id %>"
               class="post-<%= post.id %> post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-love tag-songs blog-post"
             >
               <% unless post.main_image.nil? %>
@@ -37,17 +37,13 @@
 
               <% if index == 0 %>
                 <div class="tzthe_content text-center">
-                  <script async src="//"></script>
                   <ins class="adsbygoogle"
-                       style="display: inline-block; width: 669px; height:90px"
+                       style="display: block; height:90px"
                        data-ad-client="ca-pub-4116031825041905"
                        data-ad-slot="5033991073"></ins>
-                  <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script>
-                </div>              
+                </div>
               <% end %>
-            </article>            
+            </article>
           <% end %>
 
           <div class="tzpagenavi-blog">

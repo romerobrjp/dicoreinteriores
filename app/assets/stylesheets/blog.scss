@@ -31,6 +31,28 @@ aside {
   margin-top: 0px;
 }
 
-.tz-header {
-  padding: 24px 70px 30px 170px;
+@media only screen and (min-width: 990px) {
+  .tz-header {
+    padding: 50px 0px 50px 0px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .tz-header {
+    padding: 10px 0px 10px 0px;
+  }
+}
+
+.tz-header-page .tzlogo {
+  #logo-img{
+    height: 100px;
+  }
+
+  #logo-text{
+    height: 70px;
+  }
+}
+
+.tz-menu {
+  margin-top: 16px;
 }
