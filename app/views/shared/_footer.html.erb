@@ -9,24 +9,19 @@
         </aside>
       </div>
 
-      <div class="col-md-4 footerattr">
+      <div class="col-md-4 footerattr copyright-area">
         <aside class="widget_widget_logo widget" id="widget_logo-2">
-          <div class="tz_logo_widget">            
-            <p> <%= t('generic.copyright').upcase %> <%= Time.new.year %> <%= t('generic.app_name').upcase %>. </p>
-            <p> <%= t('generic.copyright_msg').upcase %> </p>
-          </div>
+          <p> <%= t('generic.copyright').upcase %> <%= Time.new.year %> <%= t('generic.app_name').upcase %>. </p>
+          <p> <%= t('generic.copyright_msg').upcase %> </p>
         </aside>
       </div>
 
-      <div class="col-md-4 footerattr">
+      <div class="col-md-4 footerattr contact-area">
         <aside class="widget_tz_social widget" id="tz_social-2">
-          <h3 class="module-title title-widget">
-            <span> <%= t('generic.get_in_touch') %> </span>
-          </h3>
-          
-          <span> <%= "#{t('generic.get_in_touch_name').upcase}" %> </span>
-          <span> <%= "#{t('generic.get_in_touch_email').upcase}" %> </span>
-          
+          <p><%= t('generic.get_in_touch') %></p>
+          <p> <%= "#{t('generic.get_in_touch_name').upcase}" %> </p>
+          <p> <%= "#{t('generic.get_in_touch_email').upcase}" %> </p>
+
           <!-- <h3 class="module-title title-widget">
             <span> <%= t('generic.social_networks') %> </span>
           </h3>
