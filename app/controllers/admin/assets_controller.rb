@@ -1,5 +1,6 @@
 class Admin::AssetsController < Admin::AdminController
   before_action :set_admin_asset, only: [:show, :edit, :update, :destroy]
+  before_action :set_request_host
 
   # GET /admin/assets
   # GET /admin/assets.json
@@ -28,7 +29,7 @@ class Admin::AssetsController < Admin::AdminController
 
     respond_to do |format|
       if @asset.save
-        format.html { redirect_to admin_asset_url(@asset), notice: t('controllers.assets.create.success') }
+        format.html { redirect_to admin_assets_url, notice: t('controllers.assets.create.success') }
         format.json { render :show, status: :created, location: @asset }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class Admin::AssetsController < Admin::AdminController
   def update
     respond_to do |format|
       if @asset.update(admin_asset_params)
-        format.html { redirect_to admin_asset_url(@asset), notice: t('controllers.assets.udpate.success') }
+        format.html { redirect_to admin_assets_url, notice: t('controllers.assets.udpate.success') }
         format.json { render :show, status: :ok, location: @asset }
       else
         format.html { render :edit }
@@ -70,5 +71,9 @@ class Admin::AssetsController < Admin::AdminController
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_asset_params
       params[:asset].permit!
+    end
+
+    def set_request_host
+      @hostname = 'http://' + (request.host || "www.dicoreinterirores.com.br") + (request.port != 80 ? ":#{request.port}" : '')
     end
 end
