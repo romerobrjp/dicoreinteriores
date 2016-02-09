@@ -24,7 +24,7 @@
           <td><%= asset.description %></td>
           <td>
             <div class="input-group" style="max-width: 300px">
-              <input class="form-control input-sm" id="asset_url<%= asset.id %>" value="<%= asset.file.url %>"/>
+              <input class="form-control input-sm" id="asset_url<%= asset.id %>" value="<%= @hostname + asset.file.url %>"/>
               <div class="input-group-btn">
                 <button class="btn btn-default btn-sm clipboard-btn" data-clipboard-target="#asset_url<%= asset.id %>" type="button">
                   <i alt="Copy to clipboard" class="fa fa-clipboard"></i>
