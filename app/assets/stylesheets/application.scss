@@ -15,7 +15,6 @@
  *= require site/contact-form-7
  *= require blog
 
-
 */
 
  @import "site/revslider";
@@ -28,11 +27,48 @@
 
  @import "site/style";
 
+ /* HEADER */
+
 .tz-header1.headerAnimate .tzlogo a {
   height: 130px;
   padding-top: 20px;
 }
 
+/* MENU */
+
 .tz-menu {
   margin-top: 20px;
+}
+
+/* FOOTER */
+
+.footer-logo-1 {
+  height: 70px; 
+  margin-left: 25px;
+}
+
+.footer-logo-2 {
+  height: 50px;
+}
+
+.tz-footer {
+  .container {
+    margin: 40px auto;
+  }
+}
+
+.contact-area,
+.copyright-area {
+  p {
+    font-size: 12px;
+    padding: 0;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 375px) {
+  .contact-area,
+  .copyright-area {
+    margin-top: 30px;
+  }
 }
