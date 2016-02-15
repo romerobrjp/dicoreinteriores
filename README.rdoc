@@ -1,6 +1,7 @@
 This is a real world project, and it is divided in two parts: 
 
 1) An e-commerce website where the customer can order customized projects (not yet ready). http://dicoreinteriores.com.br/
+
 2) A blog with Interior Design subjects. http://dicoreinteriores.com.br/blog
 
 Developed by:
