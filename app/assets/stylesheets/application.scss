@@ -57,10 +57,18 @@
   }
 }
 
+.copyright-area {
+  margin-top: 17px;
+}
+
+.contact-area {
+  margin-top: 5px;
+}
+
 .contact-area,
 .copyright-area {
   p {
-    font-size: 12px;
+    font-size: 12px;    
     padding: 0;
     text-transform: uppercase;
   }
