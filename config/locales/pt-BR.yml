@@ -48,8 +48,12 @@ pt-BR:
     title: 'Título'
     view_all_f: 'Ver todas'
     view_all_m: 'Ver todos'
+    no_permission: 'Você não tem permissão para acessar essa página'
     go_home: 'Ir para a página principal'
     404_error: 'A página que você tentou acessar não existe!'
+    last_login: Último Login
+    configurations: Configurações
+    change_password: Alterar Senha
   activerecord:
     attributes:
       asset:
@@ -68,10 +72,14 @@ pt-BR:
         tag_list: 'Tags (Separadas por vírgula)'
         title: 'Título'
       preference:
-        footer_image: 'Imagem de fundo para rodapé'
-        footer_image_allowed: 'User esta imagem de fundo para rodapé'
-        header_image: 'Imagem de fundo para cabeçalho'
-        header_image_allowed: 'User esta imagem de fundo para cabeçalho'
+        blog_footer_image: 'Imagem de fundo para rodapé do blog'
+        blog_footer_image_allowed: 'User esta imagem de fundo para rodapé do blog'
+        blog_header_image: 'Imagem de fundo para cabeçalho do blog'
+        blog_header_image_allowed: 'User esta imagem de fundo para cabeçalho do blog'
+        footer_image: 'Imagem de fundo para rodapé da página principal'
+        footer_image_allowed: 'User esta imagem de fundo para rodapé da página principal'
+        header_image: 'Imagem de fundo para cabeçalho da página principal'
+        header_image_allowed: 'User esta imagem de fundo para cabeçalho da página principal'
         color_1: 'Cor principal (cabeçalho e rodapé)'
         color_2: 'Cor texto primário (cabeçalhos e rodapé)'
         color_3: 'Cor texto secundário (ícones, etc)'
@@ -82,6 +90,8 @@ pt-BR:
         surname: Sobrenome
         email: Email
         password: Senha
+        current_password: Senha atual
+        password_confirmation: Confirme a senha
         cpf: CPF
         phone1: Telefone (principal)
         phone2: Telefone (secundário)
@@ -201,7 +211,8 @@ pt-BR:
       populars: 'Postagens populares'
       see_more: 'Ver mais'
     menu:
-        admin_panel: 'Painel do Admin'
+        admin_panel: 'Área do Administrador'
+        customer_panel: 'Área do Cliente'
         blog:
           do_it_yourself: 'Faça você mesmo'
           inspiration: 'Inspiração'

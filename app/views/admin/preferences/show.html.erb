@@ -36,20 +36,42 @@
         <h5> <%= t('activerecord.attributes.preference.header_image') %> </h5>
         <div class="input-group custom-input-group-for-image">
           <%= t('generic.active_q') %>
-          <%= check_box_tag :header_image_allowed_show_page, @preference.header_image_allowed, @preference.footer_image_allowed %>
+          <%= check_box_tag :header_image_allowed_show_page, @preference.header_image_allowed, @preference.header_image_allowed %>
         </div>
-        <%= image_tag @preference.header_image.url, class: 'bg-img-sample-box img-responsive' %>
+        <%= @preference.header_image.url.ends_with?('missing.png') ? image_tag('sem-imagem.gif', size: '200x200') : image_tag(@preference.header_image.url, class: 'bg-img-sample-box img-responsive') %>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 custom-form-group">
         <h5> <%= t('activerecord.attributes.preference.footer_image') %> </h5>
         <div class="input-group custom-input-group-for-image">
           <%= t('generic.active_q') %>
           <%= check_box_tag :footer_image_allowed_show_page, @preference.footer_image_allowed, @preference.footer_image_allowed %>
         </div>
-        <%= image_tag @preference.footer_image.url, class: 'bg-img-sample-box img-responsive' %>
+        <%= @preference.footer_image.url.ends_with?('missing.png') ? image_tag('sem-imagem.gif', size: '200x200') : image_tag(@preference.header_image.url, class: 'bg-img-sample-box img-responsive') %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 custom-form-group">
+        <h5> <%= t('activerecord.attributes.preference.blog_header_image') %> </h5>
+        <div class="input-group custom-input-group-for-image">
+          <%= t('generic.active_q') %>
+          <%= check_box_tag :blog_header_image_allowed_show_page, @preference.blog_header_image_allowed, @preference.blog_header_image_allowed %>
+        </div>
+        <%= @preference.blog_header_image.url.ends_with?('missing.png') ? image_tag('sem-imagem.gif', size: '200x200') : image_tag(@preference.blog_header_image.url, class: 'bg-img-sample-box img-responsive') %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h5> <%= t('activerecord.attributes.preference.blog_footer_image') %> </h5>
+        <div class="input-group custom-input-group-for-image">
+          <%= t('generic.active_q') %>
+          <%= check_box_tag :blog_footer_image_allowed_show_page, @preference.blog_footer_image_allowed, @preference.blog_footer_image_allowed %>
+        </div>
+        <%= @preference.blog_footer_image.url.ends_with?('missing.png') ? image_tag('sem-imagem.gif', size: '200x200') : image_tag(@preference.blog_footer_image.url, class: 'bg-img-sample-box img-responsive') %>
       </div>
     </div>
   </div>

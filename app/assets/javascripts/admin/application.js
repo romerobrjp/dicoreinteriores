@@ -35,3 +35,5 @@ $(':checkbox').checkboxpicker();
 
 $('#header_image_allowed_show_page').prop('disabled', true);
 $('#footer_image_allowed_show_page').prop('disabled', true);
+$('#blog_header_image_allowed_show_page').prop('disabled', true);
+$('#blog_footer_image_allowed_show_page').prop('disabled', true);

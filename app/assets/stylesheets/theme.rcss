@@ -188,7 +188,7 @@ body.themecolorCustom.theme-box .everline_boxed header.headerAnimate .wrapbox {
     <% if @preference.header_image_allowed == true %>
         background-image: url('<%= @preference.header_image.url %>') !important;
     <% else %>
-        background-image: none !important;
+        background-image: @preference.color_1 !important;
     <% end %>
     background-size: cover !important;
     background-position: 50% 50% !important;
@@ -198,7 +198,27 @@ body.themecolorCustom.theme-box .everline_boxed header.headerAnimate .wrapbox {
     <% if @preference.footer_image_allowed == true %>
         background-image: url('<%= @preference.footer_image.url %>') !important;
     <% else %>
-        background-image: none !important;
+        background-image: @preference.color_1 !important;
+    <% end %>
+    background-size: cover !important;
+    background-position: 50% 50% !important;
+}
+
+.themecolorCustom .tz-header.blog-header {
+    <% if @preference.blog_header_image_allowed == true %>
+        background-image: url('<%= @preference.blog_header_image.url %>') !important;
+    <% else %>
+        background-image: @preference.color_1 !important;
+    <% end %>
+    background-size: cover !important;
+    background-position: 50% 50% !important;
+}
+
+.themecolorCustom .tz-footer.blog-footer {
+    <% if @preference.blog_footer_image_allowed == true %>
+        background-image: url('<%= @preference.blog_footer_image.url %>') !important;
+    <% else %>
+        background-image: @preference.color_1 !important;
     <% end %>
     background-size: cover !important;
     background-position: 50% 50% !important;

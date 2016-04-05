@@ -1,6 +1,6 @@
 class Admin::PreferencesController < Admin::AdminController
   before_action :set_preference, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /admin/preferences
   # GET /admin/preferences.json
   def index
@@ -41,7 +41,7 @@ class Admin::PreferencesController < Admin::AdminController
   # PATCH/PUT /admin/preferences/1.json
   def update
     respond_to do |format|
-      if @preference.update(preference_params)        
+      if @preference.update(preference_params)
         format.html { redirect_to admin_preference_path(@preference), notice: t('controllers.preferences.update.success') }
         format.json { render :show, status: :ok, location: @preference }
       else
@@ -70,15 +70,19 @@ class Admin::PreferencesController < Admin::AdminController
     # Never trust parameters from the scary internet, only allow the white list through.
     def preference_params
       params.require(:preference).permit(
-        :color_1, 
-        :color_2, 
-        :color_3, 
-        :color_4, 
-        :color_5, 
-        :user_id, 
-        :header_image, 
+        :color_1,
+        :color_2,
+        :color_3,
+        :color_4,
+        :color_5,
+        :user_id,
+        :header_image,
         :footer_image,
         :header_image_allowed,
-        :footer_image_allowed)
+        :footer_image_allowed,
+        :blog_header_image,
+        :blog_footer_image,
+        :blog_header_image_allowed,
+        :blog_footer_image_allowed)
     end
 end
