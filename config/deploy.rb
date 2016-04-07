@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'dicoreonline'
-set :repo_url, 'git@bitbucket.org:bolados-team/dicoreonline.git'
+set :repo_url, 'git@github.com:romeromfm/dicoreinteriores.git'
 set :default_stage, "staging"
 
 set :rails_env, fetch(:stage)
